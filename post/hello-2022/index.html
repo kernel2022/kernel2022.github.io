@@ -1,0 +1,229 @@
+
+<!DOCTYPE html>
+<html>
+  <head>
+    
+<meta charset="utf-8" >
+
+<title>Rust 入门 快速配置 Rust 开发环境并编写一个小应用！ | 贾献华 2022</title>
+<meta name="description" content="及时当勉励，岁月不待人。">
+
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css">
+
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+<link rel="shortcut icon" href="https://kernel2022.github.io/favicon.ico?v=1641134669732">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
+<link rel="stylesheet" href="https://kernel2022.github.io/styles/main.css">
+
+
+
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<script src="https://cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
+
+
+
+  </head>
+  <body>
+    <div id="app" class="main">
+      <div class="site-header-container">
+  <div class="site-header">
+    <div class="left">
+      <a href="https://kernel2022.github.io">
+        <img class="avatar" src="https://kernel2022.github.io/images/avatar.png?v=1641134669732" alt="" width="32px" height="32px">
+      </a>
+      <a href="https://kernel2022.github.io">
+        <h1 class="site-title">贾献华 2022</h1>
+      </a>
+    </div>
+    <div class="right">
+      <transition name="fade">
+        <i class="icon" :class="{ 'icon-close-outline': menuVisible, 'icon-menu-outline': !menuVisible }" @click="menuVisible = !menuVisible"></i>
+      </transition>
+    </div>
+  </div>
+</div>
+
+<transition name="fade">
+  <div class="menu-container" style="display: none;" v-show="menuVisible">
+    <div class="menu-list">
+      
+        
+          <a href="/" class="menu purple-link">
+            首页
+          </a>
+        
+      
+        
+          <a href="/archives" class="menu purple-link">
+            归档
+          </a>
+        
+      
+        
+          <a href="/tags" class="menu purple-link">
+            标签
+          </a>
+        
+      
+        
+          <a href="/post/about" class="menu purple-link">
+            关于
+          </a>
+        
+      
+    </div>
+  </div>
+</transition>
+
+
+      <div class="content-container">
+        <div class="post-detail">
+          
+            <div class="feature-container" style="background-image: url('https://kernel2022.github.io/post-images/hello-2022.gif')">
+            </div>
+          
+          <h2 class="post-title">Rust 入门 快速配置 Rust 开发环境并编写一个小应用！</h2>
+          <div class="post-info post-detail-info">
+            <span><i class="icon-calendar-outline"></i> 2022-01-02</span>
+            
+              <span>
+                <i class="icon-pricetags-outline"></i>
+                
+                  <a href="https://kernel2022.github.io/tag/-XcKtobgC/">
+                    rust
+                    
+                  </a>
+                
+              </span>
+            
+          </div>
+          <div class="post-content">
+            <h2 id="安装-rust">安装 Rust</h2>
+<p>您可以在 Rust 演练场上在线试用 Rust 而无需在计算机上安装任何东西。<br>
+<a href="https://play.rust-lang.org">无需安装，直接尝试 RUST</a></p>
+<!-- more -->
+<h3 id="rustuprust安装器和版本管理工具">Rustup：Rust安装器和版本管理工具</h3>
+<pre><code class="language-rust">curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
+source &quot;$HOME/.cargo/env&quot;
+</code></pre>
+<h2 id="cargorust-的构建工具和包管理器">Cargo：Rust 的构建工具和包管理器</h2>
+<p>您在安装 Rustup 时，也会安装 Rust 构建工具和包管理器的最新稳定版，即 Cargo。Cargo 可以做很多事情：</p>
+<ul>
+<li>cargo build 可以构建项目</li>
+<li>cargo run 可以运行项目</li>
+<li>cargo test 可以测试项目</li>
+<li>cargo doc 可以为项目构建文档</li>
+<li>cargo publish 可以将库发布到 crates.io。<br>
+要检查您是否安装了 Rust 和 Cargo，可以在终端中运行：<br>
+<code>cargo --version</code></li>
+</ul>
+<h2 id="创建新项目">创建新项目</h2>
+<p>我们将在新的 Rust 开发环境中编写一个小应用。首先用 Cargo 创建一个新项目。在您的终端中执行：<br>
+<code>cargo new hello-2022</code><br>
+这会生成一个名为 hello-rust 的新目录，其中包含以下文件：</p>
+<pre><code class="language-shell">hello-rust
+|- Cargo.toml
+|- src
+  |- main.rs
+</code></pre>
+<p>Cargo.toml 为 Rust 的清单文件。其中包含了项目的元数据和依赖库。<br>
+src/main.rs 为编写应用代码的地方。</p>
+<pre><code class="language-rust">fn main() {
+    println!(&quot;Hello, 2022!&quot;);
+}
+</code></pre>
+<p>cargo new 会生成一个新的“Hello, 2022!”项目！我们可以进入新创建的目录中，执行下面的命令来运行此程序：</p>
+<pre><code class="language-shell">println!(&quot;Hello, 2022!&quot;);
+</code></pre>
+<figure data-type="image" tabindex="1"><img src="https://kernel2022.github.io/post-images/1641133058333.png" alt="" loading="lazy"></figure>
+<h2 id="添加依赖">添加依赖</h2>
+<p><code>Cargo.toml</code></p>
+<pre><code class="language-xml">[dependencies]
+ferris-says = &quot;0.2&quot;
+</code></pre>
+<p>接着运行：<br>
+<code>cargo build</code><br>
+…之后 Cargo 就会安装该依赖。</p>
+<h2 id="一个-rust-小应用">一个 Rust 小应用</h2>
+<p><code>main.rs</code></p>
+<pre><code class="language-rust">use ferris_says::say; // from the previous step
+use std::io::{stdout, BufWriter};
+
+fn main() {
+    let stdout = stdout();
+    let message = String::from(&quot;Hello, 2022!&quot;);
+    let width = message.chars().count();
+
+    let mut writer = BufWriter::new(stdout.lock());
+    say(message.as_bytes(), width, &amp;mut writer).unwrap();
+}
+</code></pre>
+<p>保存完毕后，我们可以输入以下命令来运行此应用：<br>
+<code>cargo run</code><br>
+如果一切正确，您会看到该应用将以下内容打印到了屏幕上：<br>
+<img src="https://kernel2022.github.io/post-images/1641134456649.png" alt="" loading="lazy"></p>
+<h2 id="这只螃蟹是谁-ferris">这只螃蟹是谁？ Ferris ？</h2>
+<p>Ferris 是 Rust 社区的非官方吉祥物。很多 Rust 程序员自称“Rustaceans”， 它与“crustacean”相似。 我们用“they”、“them”等代词，而不用带性别的代词来指代 Ferris。</p>
+<p>Ferris 与形容词“ferrous”相似，它的含义与铁有关。由于 Rust（锈）通常由铁形成， 因此它算得上是个吉祥物名字的有趣来源。<br>
+<img src="https://kernel2022.github.io/post-images/1641133269085.gif" alt="" loading="lazy"><br>
+您可以在 http://rustacean.net/ 上找到更多 Ferris 的图片。</p>
+<h2 id="参考">参考</h2>
+<ul>
+<li><a href="https://www.rust-lang.org/zh-CN/learn/get-started">Rust 马上开始</a></li>
+</ul>
+
+          </div>
+        </div>
+
+        
+          <div class="next-post">
+            <a class="purple-link" href="https://kernel2022.github.io/post/rust/">
+              <h3 class="post-title">
+                下一篇：《Rust 编程第一课》学习笔记
+              </h3>
+            </a>
+          </div>
+          
+      </div>
+
+      
+
+      <div class="site-footer">
+  <div class="slogan">及时当勉励，岁月不待人。</div>
+  <div class="social-container">
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+  </div>
+  Powered by <a href="https://www.iosdevlog.com" target="_blank">iosdevlog.com</a> | <a class="rss" href="https://kernel2022.github.io/atom.xml" target="_blank">RSS</a>
+</div>
+
+
+    </div>
+    <script type="application/javascript">
+
+hljs.initHighlightingOnLoad()
+
+var app = new Vue({
+  el: '#app',
+  data: {
+    menuVisible: false,
+  },
+})
+
+</script>
+
+
+
+
+  </body>
+</html>
