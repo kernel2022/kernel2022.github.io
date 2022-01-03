@@ -1,0 +1,239 @@
+
+<!DOCTYPE html>
+<html>
+  <head>
+    
+<meta charset="utf-8" >
+
+<title>《张汉东的 Rust 实战课》学习笔记 | 贾献华 2022</title>
+<meta name="description" content="及时当勉励，岁月不待人。">
+
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css">
+
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+<link rel="shortcut icon" href="https://kernel2022.github.io/favicon.ico?v=1641222672728">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
+<link rel="stylesheet" href="https://kernel2022.github.io/styles/main.css">
+
+
+
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<script src="https://cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
+
+
+
+  </head>
+  <body>
+    <div id="app" class="main">
+      <div class="site-header-container">
+  <div class="site-header">
+    <div class="left">
+      <a href="https://kernel2022.github.io">
+        <img class="avatar" src="https://kernel2022.github.io/images/avatar.png?v=1641222672728" alt="" width="32px" height="32px">
+      </a>
+      <a href="https://kernel2022.github.io">
+        <h1 class="site-title">贾献华 2022</h1>
+      </a>
+    </div>
+    <div class="right">
+      <transition name="fade">
+        <i class="icon" :class="{ 'icon-close-outline': menuVisible, 'icon-menu-outline': !menuVisible }" @click="menuVisible = !menuVisible"></i>
+      </transition>
+    </div>
+  </div>
+</div>
+
+<transition name="fade">
+  <div class="menu-container" style="display: none;" v-show="menuVisible">
+    <div class="menu-list">
+      
+        
+          <a href="/" class="menu purple-link">
+            首页
+          </a>
+        
+      
+        
+          <a href="/archives" class="menu purple-link">
+            归档
+          </a>
+        
+      
+        
+          <a href="/tags" class="menu purple-link">
+            标签
+          </a>
+        
+      
+        
+          <a href="/post/about" class="menu purple-link">
+            关于
+          </a>
+        
+      
+    </div>
+  </div>
+</transition>
+
+
+      <div class="content-container">
+        <div class="post-detail">
+          
+            <div class="feature-container" style="background-image: url('https://kernel2022.github.io/post-images/rust-video.png')">
+            </div>
+          
+          <h2 class="post-title">《张汉东的 Rust 实战课》学习笔记</h2>
+          <div class="post-info post-detail-info">
+            <span><i class="icon-calendar-outline"></i> 2022-01-03</span>
+            
+              <span>
+                <i class="icon-pricetags-outline"></i>
+                
+                  <a href="https://kernel2022.github.io/tag/-XcKtobgC/">
+                    rust
+                    
+                      ，
+                    
+                  </a>
+                
+                  <a href="https://kernel2022.github.io/tag/E_0WOKvAgZ/">
+                    极课时间
+                    
+                  </a>
+                
+              </span>
+            
+          </div>
+          <div class="post-content">
+            <h2 id="学习方法">学习方法</h2>
+<ol>
+<li>从整体出发，不要陷入细节</li>
+<li>分层次学习</li>
+<li>和已知知识建立联系</li>
+<li>源码中学习</li>
+<li>主题式阅读</li>
+<li>Rust 设计哲学</li>
+<li>心智模型</li>
+<li>多分享，多提问，多交流</li>
+<li>开源项目贡献</li>
+<li>《Rust 编程之道》</li>
+</ol>
+<!-- more -->
+<h3 id="2020年5月15日-rust-稳定版发布-五周年">2020年5月15日 Rust 稳定版发布 五周年</h3>
+<p>• 内存安全为第一准则<br>
+• 注重并发安全，避免数据竞争<br>
+• 持续提升性能<br>
+• 保持语言的高度一致性<br>
+• 语言必须有可见的实用性<br>
+• 注重开发体验和学习体验<br>
+• 现代化语言特性<br>
+• 拥抱开源社区</p>
+<h3 id="rust-是新时代的-c-语言">Rust 是新时代的 C 语言</h3>
+<p>• Rust 语言是一门通用型语言。<br>
+• Rust 语言的内存安全方案针对的是 C 语言的不足。<br>
+• 安全且无缝沟通 C 语言。<br>
+• Rust 是具有混合范式的“面向过程”式的编程语言。<br>
+• 和 C 语言类似，担负了时代的使命。<br>
+<img src="https://kernel2022.github.io/post-images/1641204761152.png" alt="" loading="lazy"></p>
+<h3 id="rust-词法结构">Rust 词法结构</h3>
+<p>包含六大部分：<br>
+• 关键字（Keywords）<br>
+• 标识符（Identifier）<br>
+• 注释 （Comment）<br>
+• 空白（Whitespace）<br>
+• 词条（Tokens）<br>
+• 路径（Path）<br>
+关键字：<br>
+• 严格关键字（Strict）</p>
+<pre><code class="language-rust">as/ break/ const/ continue/ crate/ if/ else/ struct/ enum/ true/ false/ fn/
+for/ in/ let/ loop/ impl/ mod/ match/ move / mut /pub/ ref/ return/ self/
+Self/ static/ super/ trait/ type/ unsafe/ use/ where/ while /async/ await/
+dyn / main
+</code></pre>
+<p>• 保留字（Reserved）</p>
+<pre><code class="language-rust">abstract/ become/ box/ do/ final/ macro/ override/ priv/ typeof/
+unsized/ virtual/ yield / try
+</code></pre>
+<p>• 弱关键字（Weak）</p>
+<ol>
+<li>2018 Edition: union, static</li>
+<li>2015 Edition: dyn</li>
+</ol>
+<h3 id="词条">词条</h3>
+<ol>
+<li>语言项 （item）</li>
+<li>块（block）</li>
+<li>语句（Stmt）</li>
+<li>表达式 （Expr）</li>
+<li>模式 （Pattern）</li>
+<li>关键字 （Keyword）</li>
+<li>标识符 （Ident）</li>
+<li>字面量 （Literal）</li>
+<li>生命周期 （Lifetime）</li>
+<li>可见性 （Vis）</li>
+<li>标点符号（Punctuation）</li>
+<li>分隔符（delimiter）</li>
+<li>词条树（Token Tree）</li>
+<li>属性（Attribute）</li>
+</ol>
+<h2 id="参考">参考</h2>
+<ul>
+<li><a href="https://time.geekbang.org/course/intro/100060601?tab=catalog">极客时间-张汉东的 Rust 实战课</a></li>
+<li><a href="https://github.com/ZhangHanDong/inviting-rust">课件及 Demo 下载链接</a></li>
+</ul>
+
+          </div>
+        </div>
+
+        
+          <div class="next-post">
+            <a class="purple-link" href="https://kernel2022.github.io/post/hello-2022/">
+              <h3 class="post-title">
+                下一篇：Rust 入门 快速配置 Rust 开发环境并编写一个小应用！
+              </h3>
+            </a>
+          </div>
+          
+      </div>
+
+      
+
+      <div class="site-footer">
+  <div class="slogan">及时当勉励，岁月不待人。</div>
+  <div class="social-container">
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+  </div>
+  Powered by <a href="https://www.iosdevlog.com" target="_blank">iosdevlog.com</a> | <a class="rss" href="https://kernel2022.github.io/atom.xml" target="_blank">RSS</a>
+</div>
+
+
+    </div>
+    <script type="application/javascript">
+
+hljs.initHighlightingOnLoad()
+
+var app = new Vue({
+  el: '#app',
+  data: {
+    menuVisible: false,
+  },
+})
+
+</script>
+
+
+
+
+  </body>
+</html>
