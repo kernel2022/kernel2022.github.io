@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://kernel2022.github.io</id>
     <title>贾献华 2022</title>
-    <updated>2022-01-03T15:11:16.314Z</updated>
+    <updated>2022-01-04T15:22:38.730Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://kernel2022.github.io"/>
     <link rel="self" href="https://kernel2022.github.io/atom.xml"/>
@@ -10,6 +10,112 @@
     <logo>https://kernel2022.github.io/images/avatar.png</logo>
     <icon>https://kernel2022.github.io/favicon.ico</icon>
     <rights>All rights reserved 2022, 贾献华 2022</rights>
+    <entry>
+        <title type="html"><![CDATA[【1月班】Tableau 技能 14 天打卡训练营-Day1: 完成第一个可视化]]></title>
+        <id>https://kernel2022.github.io/post/tableau-day-1/</id>
+        <link href="https://kernel2022.github.io/post/tableau-day-1/">
+        </link>
+        <updated>2022-01-04T13:26:24.000Z</updated>
+        <summary type="html"><![CDATA[<h2 id="上课地址">上课地址</h2>
+<p><a href="https://appkmawugcq3660.pc.xiaoe-tech.com/detail/term_61c55f79648f9_RYHNiw/25">https://appkmawugcq3660.pc.xiaoe-tech.com/detail/term_61c55f79648f9_RYHNiw/25</a></p>
+<h2 id="下载-tableau-desktop">下载 Tableau Desktop</h2>
+<p><a href="https://downloads.tableau.com/tssoftwareregistered/TableauDesktop-2021-4-2.dmg">TableauDesktop-2021-4-2.dmg</a></p>
+<h2 id="目录">目录</h2>
+<figure data-type="image" tabindex="1"><img src="https://kernel2022.github.io/post-images/1641302935535.png" alt="" loading="lazy"></figure>
+]]></summary>
+        <content type="html"><![CDATA[<h2 id="上课地址">上课地址</h2>
+<p><a href="https://appkmawugcq3660.pc.xiaoe-tech.com/detail/term_61c55f79648f9_RYHNiw/25">https://appkmawugcq3660.pc.xiaoe-tech.com/detail/term_61c55f79648f9_RYHNiw/25</a></p>
+<h2 id="下载-tableau-desktop">下载 Tableau Desktop</h2>
+<p><a href="https://downloads.tableau.com/tssoftwareregistered/TableauDesktop-2021-4-2.dmg">TableauDesktop-2021-4-2.dmg</a></p>
+<h2 id="目录">目录</h2>
+<figure data-type="image" tabindex="1"><img src="https://kernel2022.github.io/post-images/1641302935535.png" alt="" loading="lazy"></figure>
+<!-- more -->
+<p>▶ Day1 课程内容<br>
+连接数据源，并使用 Tableau 实现数据明细、数据分布、数据趋势、填充地图、客户生命周期、智能显示等分析需求。</p>
+<p>▶ Day1 练习数据（复制链接至浏览器获取）<br>
+链接：https://pan.baidu.com/s/1iXb42tioJ89qam6Lir-LBg<br>
+提取码：j41c</p>
+<p>▶ Day1 随堂测验<br>
+请返回训练营目录，完成随堂检测打卡任务【D1作业题】。<br>
+考试截止时间：1月6日23:59 ，若超时则无法参与考试并计入作业成绩。</p>
+<h3 id="查看子类别销售额">查看子类别销售额</h3>
+<ol>
+<li>到文件</li>
+<li>Microsoft Excel</li>
+<li>示例-超市.xls</li>
+<li>工作表</li>
+<li>双击订单，查看数据源</li>
+<li>单击左下角 <strong>工作表1</strong></li>
+<li>表上方：维度</li>
+<li>表下方：度量</li>
+<li>双击左下角 <strong>工作表1</strong>，重命名为 <strong>表格</strong></li>
+<li>双击 <strong>子类别</strong></li>
+<li>双击 <strong>销售额</strong><br>
+<img src="https://kernel2022.github.io/post-images/1641306121794.png" alt="表格" loading="lazy"></li>
+</ol>
+<h3 id="绘制柱形图">绘制柱形图</h3>
+<ol>
+<li>点击左下角 <strong>新建工作表</strong></li>
+<li>重命名为 <strong>柱形图</strong></li>
+<li>双击 <strong>销售额</strong></li>
+<li>双击 <strong>子类别</strong></li>
+<li>拖拽 <strong>销售额</strong> 到 <em>标签</em></li>
+<li>拖拽 <strong>利润</strong> 到 <em>颜色</em><br>
+<img src="https://kernel2022.github.io/post-images/1641306258690.png" alt="柱形图" loading="lazy"></li>
+</ol>
+<blockquote>
+<p>先双击维度，生成表格<br>
+先双击度量，生成图</p>
+</blockquote>
+<h3 id="绘制拆线图">绘制拆线图</h3>
+<ol>
+<li>点击左下角 <strong>新建工作表</strong></li>
+<li>重命名为 <strong>拆线图</strong></li>
+<li>双击 <strong>销售额</strong></li>
+<li>双击 <strong>订单日期</strong></li>
+<li>工具栏：<strong>标准</strong> -&gt; <strong>整个视图</strong></li>
+<li>下钻：列 -&gt; 年（订单日期） -&gt; 季度（订单日期）</li>
+<li>下钻：列 -&gt; 季度（订单日期） -&gt; 月（订单日期）</li>
+<li>移除：季度（订单日期）<br>
+<img src="https://kernel2022.github.io/post-images/1641306390683.png" alt="" loading="lazy"></li>
+</ol>
+<h3 id="绘制地图">绘制地图</h3>
+<ol>
+<li>点击左下角 <strong>新建工作表</strong></li>
+<li>重命名为 <strong>地图</strong></li>
+<li>右击 <strong>省/自治区</strong> -&gt; 地理角色 -&gt; 州/省/市/自治区 (左侧图标变成地球🌍)</li>
+<li>双击 <strong>省/自治区</strong></li>
+<li>拖拽 <strong>省/自治区</strong> 到 <em>颜色</em></li>
+<li>拖拽 <strong>省/自治区</strong> 到 <em>标签</em></li>
+<li>拖拽 <strong>销售额</strong> 到 <em>标签</em><br>
+<img src="https://kernel2022.github.io/post-images/1641306851852.png" alt="" loading="lazy"></li>
+</ol>
+<h3 id="树形图">树形图</h3>
+<ol>
+<li>点击左下角 <strong>新建工作表</strong></li>
+<li>重命名为 <strong>树形图</strong></li>
+<li>下拉：标记 -&gt; 方形</li>
+<li>拖拽 <strong>客户名称</strong> 到 <em>详细信息</em></li>
+<li>拖拽 <strong>销售额</strong> 到 <em>大小</em></li>
+<li>拖拽 <strong>订单日期</strong> 到 <em>行</em></li>
+<li>工具栏：<strong>标准</strong> -&gt; <strong>整个视图</strong></li>
+<li>工具栏：<strong>突出显示</strong> -&gt; <strong>客户名称</strong></li>
+<li>选择客户<br>
+<img src="https://kernel2022.github.io/post-images/1641307600176.png" alt="" loading="lazy"></li>
+</ol>
+<h3 id="智能显示">智能显示</h3>
+<ol>
+<li>点击左下角 <strong>新建工作表</strong></li>
+<li>重命名为 <strong>智能显示</strong></li>
+<li>点击 <strong>子类别</strong></li>
+<li>Ctrl(cmd) 点击 <strong>销售额</strong></li>
+<li>右上角：智能推荐 -&gt; 气泡图<br>
+<img src="https://kernel2022.github.io/post-images/1641308084654.png" alt="" loading="lazy"></li>
+</ol>
+<h2 id="随堂测验">随堂测验</h2>
+<figure data-type="image" tabindex="2"><img src="https://kernel2022.github.io/post-images/1641309372405.png" alt="" loading="lazy"></figure>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[《张汉东的 Rust 实战课》学习笔记]]></title>
         <id>https://kernel2022.github.io/post/rust-video/</id>
