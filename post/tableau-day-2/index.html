@@ -1,0 +1,368 @@
+
+<!DOCTYPE html>
+<html>
+  <head>
+    
+<meta charset="utf-8" >
+
+<title>Tableau Day2: 可视化入门图形制作 | 贾献华 2022</title>
+<meta name="description" content="及时当勉励，岁月不待人。">
+
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css">
+
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+<link rel="shortcut icon" href="https://kernel2022.github.io/favicon.ico?v=1641394945477">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
+<link rel="stylesheet" href="https://kernel2022.github.io/styles/main.css">
+
+
+
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<script src="https://cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
+
+
+
+  </head>
+  <body>
+    <div id="app" class="main">
+      <div class="site-header-container">
+  <div class="site-header">
+    <div class="left">
+      <a href="https://kernel2022.github.io">
+        <img class="avatar" src="https://kernel2022.github.io/images/avatar.png?v=1641394945477" alt="" width="32px" height="32px">
+      </a>
+      <a href="https://kernel2022.github.io">
+        <h1 class="site-title">贾献华 2022</h1>
+      </a>
+    </div>
+    <div class="right">
+      <transition name="fade">
+        <i class="icon" :class="{ 'icon-close-outline': menuVisible, 'icon-menu-outline': !menuVisible }" @click="menuVisible = !menuVisible"></i>
+      </transition>
+    </div>
+  </div>
+</div>
+
+<transition name="fade">
+  <div class="menu-container" style="display: none;" v-show="menuVisible">
+    <div class="menu-list">
+      
+        
+          <a href="/" class="menu purple-link">
+            首页
+          </a>
+        
+      
+        
+          <a href="/archives" class="menu purple-link">
+            归档
+          </a>
+        
+      
+        
+          <a href="/tags" class="menu purple-link">
+            标签
+          </a>
+        
+      
+        
+          <a href="/post/about" class="menu purple-link">
+            关于
+          </a>
+        
+      
+    </div>
+  </div>
+</transition>
+
+
+      <div class="content-container">
+        <div class="post-detail">
+          
+            <div class="feature-container" style="background-image: url('https://kernel2022.github.io/post-images/tableau-day-2.png')">
+            </div>
+          
+          <h2 class="post-title">Tableau Day2: 可视化入门图形制作</h2>
+          <div class="post-info post-detail-info">
+            <span><i class="icon-calendar-outline"></i> 2022-01-05</span>
+            
+              <span>
+                <i class="icon-pricetags-outline"></i>
+                
+                  <a href="https://kernel2022.github.io/tag/pjl7G_sDW/">
+                    Tableau 技能 14 天打卡训练营
+                    
+                      ，
+                    
+                  </a>
+                
+                  <a href="https://kernel2022.github.io/tag/U7EQ8NsLe/">
+                    tableau
+                    
+                  </a>
+                
+              </span>
+            
+          </div>
+          <div class="post-content">
+            <p>▶ Day2 课程内容<br>
+在 Tableau 中绘制折线图、柱形图、甘特图、饼图、圆环图与树状图的思路与实践方法。</p>
+<!-- more -->
+<p>▶ Day2 练习数据（复制链接至浏览器获取）<br>
+链接：https://pan.baidu.com/s/1htJDkApcDoiZbAQmQ38Jhw<br>
+提取码：8i27</p>
+<h2 id="目录">目录</h2>
+<figure data-type="image" tabindex="1"><img src="https://kernel2022.github.io/post-images/1641386457998.png" alt="目录" loading="lazy"></figure>
+<h2 id="折线图">折线图</h2>
+<figure data-type="image" tabindex="2"><img src="https://kernel2022.github.io/post-images/1641394222099.png" alt="原理" loading="lazy"></figure>
+<ol>
+<li>到文件
+<ul>
+<li>Microsoft Excel</li>
+</ul>
+</li>
+<li>示例-超市.xls</li>
+<li><strong>工作表</strong></li>
+<li>拖拽 <strong>订单</strong>，查看数据源</li>
+<li>双击左下角 <strong>工作表1</strong>
+<ul>
+<li>重命名为 <strong>折线图</strong></li>
+</ul>
+</li>
+<li>拖拽 <strong>销售额</strong> 到 <em>行</em></li>
+<li>拖拽 <strong>订单日期</strong> 到 <em>列</em></li>
+<li>工具栏：标准 -&gt; 整个视图<br>
+<img src="https://kernel2022.github.io/post-images/1641387852784.png" alt="折线图" loading="lazy"></li>
+</ol>
+<h2 id="柱形图">柱形图</h2>
+<figure data-type="image" tabindex="3"><img src="https://kernel2022.github.io/post-images/1641387988206.png" alt="原理" loading="lazy"></figure>
+<ol>
+<li>点击左下角 <strong>新建工作表</strong>
+<ul>
+<li>重命名为 <strong>柱形图</strong></li>
+</ul>
+</li>
+<li>拖拽 <strong>销售额</strong> 到 <em>行</em></li>
+<li>拖拽 <strong>子类别</strong> 到 <em>列</em><br>
+<img src="https://kernel2022.github.io/post-images/1641388083847.png" alt="柱形图" loading="lazy"></li>
+</ol>
+<h2 id="甘特图">甘特图</h2>
+<figure data-type="image" tabindex="4"><img src="https://kernel2022.github.io/post-images/1641388287414.png" alt="原理" loading="lazy"></figure>
+<ol>
+<li>点击左下角 <strong>新建工作表</strong>
+<ul>
+<li>重命名为 <strong>甘特图</strong></li>
+</ul>
+</li>
+<li>左侧下拉：<strong>创建计算字段</strong>
+<ul>
+<li>重命名为 <strong>间隔天数</strong></li>
+</ul>
+</li>
+<li>下拉选择：<strong>日期</strong></li>
+<li>双击：<strong>DATEDIFF</strong>
+<ul>
+<li>第一个参数 <strong>日期部分</strong>：'day'</li>
+<li>第二个参数 <strong>开始日期</strong>：拖拽 <strong>订单日期</strong> 到 <em>开始日期</em></li>
+<li>第三个参数 <strong>结束日期</strong>：拖拽 <strong>发货日期</strong> 到 <em>结束日期</em></li>
+<li><code>DATEDIFF('day', [订单日期], [发货日期])</code></li>
+<li>点击 <strong>应用</strong></li>
+<li>点击 <strong>确定</strong><br>
+<img src="https://kernel2022.github.io/post-images/1641389327067.png" alt="创建计算字段" loading="lazy"></li>
+</ul>
+</li>
+<li>拖拽 <strong>订单ID</strong> 到 <em>行</em></li>
+<li>拖拽 <strong>订单ID</strong> 到 <em>筛选器</em></li>
+<li>选择：<em>从列表中选择</em></li>
+<li>点击：<em>无</em></li>
+<li>选中前 10 个</li>
+<li>点击 <strong>应用</strong></li>
+<li>点击 <strong>确定</strong><br>
+<img src="https://kernel2022.github.io/post-images/1641389593959.png" alt="筛选器" loading="lazy"></li>
+<li>拖拽 <strong>订单日期</strong> 到 <em>列</em></li>
+<li>右击：<strong>订单日期</strong>
+<ul>
+<li>选中：<strong>精确日期</strong></li>
+</ul>
+</li>
+<li>拖拽 <strong>间隔天数</strong> 到 <em>大小</em></li>
+<li>右击 <strong>间隔天数</strong>
+<ul>
+<li>选中：<strong>度量（平均值）</strong></li>
+</ul>
+</li>
+<li>拖拽 <strong>发货日期</strong> 到 <em>详细信息</em></li>
+<li>右击：<strong>发货日期</strong>
+<ul>
+<li>选中：<strong>精确日期</strong><br>
+<img src="https://kernel2022.github.io/post-images/1641390048613.png" alt="甘特图" loading="lazy"></li>
+</ul>
+</li>
+</ol>
+<h2 id="饼图">饼图</h2>
+<figure data-type="image" tabindex="5"><img src="https://kernel2022.github.io/post-images/1641390288298.png" alt="原理" loading="lazy"></figure>
+<ol>
+<li>点击左下角 <strong>新建工作表</strong>
+<ul>
+<li>重命名为 <strong>饼图</strong></li>
+</ul>
+</li>
+<li>下拉：<strong>标记</strong>
+<ul>
+<li>选中：<strong>饼图</strong></li>
+</ul>
+</li>
+<li>拖拽 <strong>类别</strong> 到 <em>颜色</em></li>
+<li>工具栏：标准 -&gt; 整个视图</li>
+<li>拖拽 <strong>数量</strong> 到 <em>角度</em></li>
+<li>拖拽 <strong>类别</strong> 到 <em>标签</em></li>
+<li>拖拽 <strong>数量</strong> 到 <em>标签</em></li>
+<li>右击：<strong>总和（数量）</strong>
+<ul>
+<li>选中：<strong>快速表计算</strong>
+<ul>
+<li>选中：<strong>合并百分比</strong><br>
+<img src="https://kernel2022.github.io/post-images/1641390797861.png" alt="饼图" loading="lazy"></li>
+</ul>
+</li>
+</ul>
+</li>
+</ol>
+<h2 id="圆环图">圆环图</h2>
+<figure data-type="image" tabindex="6"><img src="https://kernel2022.github.io/post-images/1641390912774.png" alt="原理" loading="lazy"></figure>
+<ol>
+<li>点击左下角 <strong>新建工作表</strong>
+<ul>
+<li>重命名为 <strong>圆环图</strong></li>
+</ul>
+</li>
+<li>下拉：<strong>标记</strong>
+<ul>
+<li>选中：<strong>饼图</strong></li>
+</ul>
+</li>
+<li>选中 <em>行</em>
+<ul>
+<li>输入 <code>0</code> 回车</li>
+<li>再输入 <code>0</code> 回车</li>
+</ul>
+</li>
+<li>工具栏：标准 -&gt; 整个视图</li>
+<li>选中上方：<strong>总和0</strong>
+<ul>
+<li>拖拽 <strong>类别</strong> 到 <em>颜色</em></li>
+<li>拖拽 <strong>数量</strong> 到 <em>角度</em></li>
+<li>选中：<strong>大小</strong>
+<ul>
+<li>放大一些</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>选中下方：<strong>总和0</strong>
+<ul>
+<li>右击：Y轴
+<ul>
+<li>选中：<em>双轴</em></li>
+</ul>
+</li>
+<li>选中：<em>颜色</em>
+<ul>
+<li>选中：<em>白色</em></li>
+</ul>
+</li>
+<li>选中：<strong>大小</strong>
+<ul>
+<li>放大一些</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>选中上方：<strong>总和0</strong>
+<ul>
+<li>拖拽 <strong>类别</strong> 到 <em>标签</em></li>
+<li>拖拽 <strong>数量</strong> 到 <em>标签</em></li>
+<li>右击：<strong>总和（数量）</strong>
+<ul>
+<li>选中：<strong>快速表计算</strong>
+<ul>
+<li>选中：<strong>合并百分比</strong><br>
+<img src="https://kernel2022.github.io/post-images/1641392814842.png" alt="圆环图" loading="lazy"></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ol>
+<h2 id="树形图">树形图</h2>
+<figure data-type="image" tabindex="7"><img src="https://kernel2022.github.io/post-images/1641392914647.png" alt="原理" loading="lazy"></figure>
+<ol>
+<li>点击左下角 <strong>新建工作表</strong>
+<ul>
+<li>重命名为 <strong>树形图</strong></li>
+</ul>
+</li>
+<li>下拉：<strong>标记</strong> -&gt; <em>方形</em></li>
+<li>拖拽 <strong>客户名称</strong> 到 <em>详细信息</em></li>
+<li>拖拽 <strong>销售额</strong> 到 <em>大小</em><br>
+<img src="https://kernel2022.github.io/post-images/1641394176152.png" alt="树形图" loading="lazy"></li>
+</ol>
+<h2 id="随堂测验">随堂测验</h2>
+<figure data-type="image" tabindex="8"><img src="https://kernel2022.github.io/post-images/1641394680426.png" alt="随堂测验" loading="lazy"></figure>
+
+          </div>
+        </div>
+
+        
+          <div class="next-post">
+            <a class="purple-link" href="https://kernel2022.github.io/post/tableau-day-1/">
+              <h3 class="post-title">
+                下一篇：Tableau Day1: 完成第一个可视化
+              </h3>
+            </a>
+          </div>
+          
+      </div>
+
+      
+
+      <div class="site-footer">
+  <div class="slogan">及时当勉励，岁月不待人。</div>
+  <div class="social-container">
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+  </div>
+  Powered by <a href="https://www.iosdevlog.com" target="_blank">iosdevlog.com</a> | <a class="rss" href="https://kernel2022.github.io/atom.xml" target="_blank">RSS</a>
+</div>
+
+
+    </div>
+    <script type="application/javascript">
+
+hljs.initHighlightingOnLoad()
+
+var app = new Vue({
+  el: '#app',
+  data: {
+    menuVisible: false,
+  },
+})
+
+</script>
+
+
+
+
+  </body>
+</html>
