@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://kernel2022.github.io</id>
     <title>贾献华 2022</title>
-    <updated>2022-01-05T15:02:47.210Z</updated>
+    <updated>2022-01-06T16:46:56.615Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://kernel2022.github.io"/>
     <link rel="self" href="https://kernel2022.github.io/atom.xml"/>
@@ -10,6 +10,224 @@
     <logo>https://kernel2022.github.io/images/avatar.png</logo>
     <icon>https://kernel2022.github.io/favicon.ico</icon>
     <rights>All rights reserved 2022, 贾献华 2022</rights>
+    <entry>
+        <title type="html"><![CDATA[Tableau Day3：智能分析]]></title>
+        <id>https://kernel2022.github.io/post/tableau-day-3/</id>
+        <link href="https://kernel2022.github.io/post/tableau-day-3/">
+        </link>
+        <updated>2022-01-06T10:53:30.000Z</updated>
+        <summary type="html"><![CDATA[<p>▶ Day3 课程内容<br>
+学习如何使用参数，实现业务问题预警与自定义选择指标。</p>
+]]></summary>
+        <content type="html"><![CDATA[<p>▶ Day3 课程内容<br>
+学习如何使用参数，实现业务问题预警与自定义选择指标。</p>
+<!-- more -->
+<p>▶ Day3 练习数据（复制链接至浏览器获取）<br>
+https://pan.baidu.com/s/1HYWpDAdJHYkJ0K_u43yK3A<br>
+提取码：wyik</p>
+<h2 id="达标判断">达标判断</h2>
+<ol>
+<li>到文件
+<ul>
+<li>Microsoft Excel</li>
+</ul>
+</li>
+<li>示例-超市.xls</li>
+<li><strong>工作表</strong></li>
+<li>拖拽 <strong>订单</strong>，查看数据源</li>
+<li>双击左下角 <strong>工作表1</strong>
+<ul>
+<li>重命名为 <strong>达标判断</strong></li>
+</ul>
+</li>
+<li>拖拽 <strong>订单日期</strong> 到 <em>列</em>
+<ol>
+<li>下钻：<strong>年-月</strong></li>
+</ol>
+</li>
+<li>拖拽 <strong>销售额</strong> 到 <em>行</em></li>
+<li>工具栏：标准 -&gt; 整个视图</li>
+<li>拖拽 <strong>订单日期</strong> 到 <em>列</em></li>
+<li>下拉：<strong>标记</strong></li>
+</ol>
+<ul>
+<li>选择：<strong>条形图</strong></li>
+</ul>
+<ol start="11">
+<li>点击左上角 <strong>分析</strong>（在<strong>数据</strong>旁边）
+<ol>
+<li>拖拽 <strong>常量线</strong>  到 右侧 <strong>表</strong></li>
+<li>输入 <em>400000</em> （四十万）</li>
+</ol>
+</li>
+<li>点击左上角 <strong>数据</strong></li>
+<li>搜索 旁边的 <strong>下拉</strong></li>
+<li>选择 <strong>创建计算字段</strong></li>
+<li>重命名：<strong>达标判断</strong><br>
+<img src="https://kernel2022.github.io/post-images/1641482153765.png" alt="达标判断" loading="lazy"></li>
+</ol>
+<pre><code class="language-bash">IF SUM([销售额]) &gt;= 400000 THEN '达标'
+ELSE '不达标'
+END
+</code></pre>
+<ol start="15">
+<li>拖拽 <strong>达标判断</strong> 到 <em>颜色</em></li>
+<li>右侧下拉：<strong>编辑颜色</strong>
+<ol>
+<li>不达标：红</li>
+<li>达标：绿<br>
+<img src="https://kernel2022.github.io/post-images/1641482709419.png" alt="编辑颜色" loading="lazy"><br>
+<img src="https://kernel2022.github.io/post-images/1641482723209.png" alt="达标判断" loading="lazy"></li>
+</ol>
+</li>
+</ol>
+<h2 id="变动目标">变动目标</h2>
+<ol>
+<li>右击 <strong>达标判断</strong> 工作表
+<ol>
+<li>点击 <strong>复制</strong> （复制为交叉表上方）</li>
+<li>重命名为 <strong>变动目标</strong></li>
+</ol>
+</li>
+<li>右击 <strong>常量线</strong>
+<ol>
+<li>点击 <strong>移除</strong></li>
+</ol>
+</li>
+<li>点击 <strong>分析</strong>
+<ol>
+<li>拖拽 <strong>平均线</strong>  到 右侧 <strong>表</strong></li>
+<li>右击：<strong>编辑</strong></li>
+<li><strong>线</strong> / <strong>值</strong> / <strong>下拉</strong>：<em>创建新参数</em>
+<ol>
+<li>名称：<strong>变动目标</strong></li>
+<li>值范围
+<ol>
+<li>最小值：300,000（三十万）</li>
+<li>最大值：500,000（五十万）</li>
+<li>表长：    5000（五千）<br>
+<img src="https://kernel2022.github.io/post-images/1641483488024.png" alt="变动目标" loading="lazy"></li>
+</ol>
+</li>
+</ol>
+</li>
+<li>标签：<strong>值</strong><br>
+<img src="https://kernel2022.github.io/post-images/1641483606826.png" alt="平均线" loading="lazy"></li>
+</ol>
+</li>
+<li>右击：左下角 <strong>参数</strong> / <strong>变动目标</strong>
+<ol>
+<li>选择：<strong>显示参数</strong></li>
+</ol>
+</li>
+<li>右击：<strong>表</strong> / <strong>达标判断</strong>
+<ol>
+<li>选择：<strong>编辑</strong></li>
+</ol>
+</li>
+</ol>
+<pre><code class="language-bash">IF SUM([销售额]) &gt;= [变动目标] THEN '达标'
+ELSE '不达标'
+END
+</code></pre>
+<figure data-type="image" tabindex="1"><img src="https://kernel2022.github.io/post-images/1641484180942.png" alt="变动目标" loading="lazy"></figure>
+<h2 id="动态度量">动态度量</h2>
+<ol>
+<li>左下角新建 <strong>工作表</strong>
+<ul>
+<li>重命名为 <strong>动态度量</strong></li>
+</ul>
+</li>
+<li>拖拽 <strong>子类别</strong> 到 <em>列</em></li>
+<li>拖拽 <strong>销售额</strong> 到 <em>行</em></li>
+<li>工具栏：标准 -&gt; 整个视图</li>
+<li>搜索 旁边的 <strong>下拉</strong></li>
+<li>选择 <strong>创建参数</strong>
+<ol>
+<li>名称：<strong>度量选择</strong></li>
+<li>字符类型：<strong>字符串</strong></li>
+<li>允许的值：<strong>列表</strong></li>
+<li>值列表：<strong>值</strong>
+<ol>
+<li>销售额</li>
+<li>利润</li>
+<li>数量<br>
+<img src="https://kernel2022.github.io/post-images/1641485063947.png" alt="创建参数" loading="lazy"></li>
+</ol>
+</li>
+</ol>
+</li>
+<li>右击：左下角 <strong>参数</strong> / <strong>度量选择</strong>
+<ol>
+<li>选择：<strong>显示参数</strong></li>
+</ol>
+</li>
+<li>搜索 旁边的 <strong>下拉</strong></li>
+<li>选择 <strong>创建计算字段</strong>
+<ol>
+<li>重命名：<strong>动态度量</strong></li>
+</ol>
+</li>
+</ol>
+<pre><code class="language-bash">IF [度量选择] == '销售额' THEN [销售额]
+ELSEIF [度量选择] == '利润' THEN [利润]
+ELSEIF [度量选择] == '数量' THEN [数量]
+END
+</code></pre>
+<ol start="9">
+<li>拖拽 <strong>动态度量</strong> 到 <em>行</em> 替换 <strong>总和（销售额）</strong><br>
+<img src="https://kernel2022.github.io/post-images/1641485744377.png" alt="动态度量" loading="lazy"></li>
+</ol>
+<h2 id="动态维度">动态维度</h2>
+<ol>
+<li>左下角新建 <strong>工作表</strong>
+<ul>
+<li>重命名为 ** 动态维度**</li>
+</ul>
+</li>
+<li>拖拽 <strong>子类别</strong> 到 <em>列</em></li>
+<li>拖拽 <strong>销售额</strong> 到 <em>行</em></li>
+<li>工具栏：标准 -&gt; 整个视图</li>
+<li>搜索 旁边的 <strong>下拉</strong></li>
+<li>选择 <strong>创建参数</strong>
+<ol>
+<li>名称：<strong>维度选择</strong></li>
+<li>字符类型：<strong>字符串</strong></li>
+<li>允许的值：<strong>列表</strong></li>
+<li>值列表：<strong>值</strong>
+<ol>
+<li>子类别</li>
+<li>区域</li>
+<li>细分<br>
+<img src="https://kernel2022.github.io/post-images/1641486024205.png" alt="维度选择" loading="lazy"></li>
+</ol>
+</li>
+</ol>
+</li>
+<li>右击：左下角 <strong>参数</strong> / <strong>维度选择</strong>
+<ol>
+<li>选择：<strong>显示参数</strong></li>
+</ol>
+</li>
+<li>选择 <strong>创建计算字段</strong>
+<ol>
+<li>重命名：<strong>动态维度</strong></li>
+</ol>
+</li>
+</ol>
+<pre><code class="language-bash">IF [维度选择] == '子类别' THEN [子类别]
+ELSEIF [维度选择] == '区域' THEN [区域]
+ELSEIF [维度选择] == '细分' THEN [细分]
+END 
+</code></pre>
+<ol start="9">
+<li>拖拽 <strong>动态度量</strong> 到 <em>列</em> 替换 <strong>子类别</strong><br>
+<img src="https://kernel2022.github.io/post-images/1641486479791.png" alt="动态维度" loading="lazy"></li>
+</ol>
+<h2 id="随堂测验">随堂测验</h2>
+<p>![随堂测验<img src="https://kernel2022.github.io/post-images/1641487400799.png" alt="" loading="lazy"></p>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[Tableau Day2: 可视化入门图形制作]]></title>
         <id>https://kernel2022.github.io/post/tableau-day-2/</id>
