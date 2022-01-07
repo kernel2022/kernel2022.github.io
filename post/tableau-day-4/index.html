@@ -1,0 +1,280 @@
+
+<!DOCTYPE html>
+<html>
+  <head>
+    
+<meta charset="utf-8" >
+
+<title>Tableau Day4：时间分析 | 贾献华 2022</title>
+<meta name="description" content="及时当勉励，岁月不待人。">
+
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css">
+
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+<link rel="shortcut icon" href="https://kernel2022.github.io/favicon.ico?v=1641567285688">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
+<link rel="stylesheet" href="https://kernel2022.github.io/styles/main.css">
+
+
+
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<script src="https://cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
+
+
+
+  </head>
+  <body>
+    <div id="app" class="main">
+      <div class="site-header-container">
+  <div class="site-header">
+    <div class="left">
+      <a href="https://kernel2022.github.io">
+        <img class="avatar" src="https://kernel2022.github.io/images/avatar.png?v=1641567285688" alt="" width="32px" height="32px">
+      </a>
+      <a href="https://kernel2022.github.io">
+        <h1 class="site-title">贾献华 2022</h1>
+      </a>
+    </div>
+    <div class="right">
+      <transition name="fade">
+        <i class="icon" :class="{ 'icon-close-outline': menuVisible, 'icon-menu-outline': !menuVisible }" @click="menuVisible = !menuVisible"></i>
+      </transition>
+    </div>
+  </div>
+</div>
+
+<transition name="fade">
+  <div class="menu-container" style="display: none;" v-show="menuVisible">
+    <div class="menu-list">
+      
+        
+          <a href="/" class="menu purple-link">
+            首页
+          </a>
+        
+      
+        
+          <a href="/archives" class="menu purple-link">
+            归档
+          </a>
+        
+      
+        
+          <a href="/tags" class="menu purple-link">
+            标签
+          </a>
+        
+      
+        
+          <a href="/post/about" class="menu purple-link">
+            关于
+          </a>
+        
+      
+    </div>
+  </div>
+</transition>
+
+
+      <div class="content-container">
+        <div class="post-detail">
+          
+            <div class="feature-container" style="background-image: url('https://kernel2022.github.io/post-images/tableau-day-4.png')">
+            </div>
+          
+          <h2 class="post-title">Tableau Day4：时间分析</h2>
+          <div class="post-info post-detail-info">
+            <span><i class="icon-calendar-outline"></i> 2022-01-07</span>
+            
+              <span>
+                <i class="icon-pricetags-outline"></i>
+                
+                  <a href="https://kernel2022.github.io/tag/pjl7G_sDW/">
+                    Tableau 技能 14 天打卡训练营
+                    
+                      ，
+                    
+                  </a>
+                
+                  <a href="https://kernel2022.github.io/tag/U7EQ8NsLe/">
+                    tableau
+                    
+                  </a>
+                
+              </span>
+            
+          </div>
+          <div class="post-content">
+            <p>▶ Day3 课程内容<br>
+学习制作人口随时间变化的动态图表，以及排名变化的分析视图。</p>
+<!-- more -->
+<h2 id="时间分析">时间分析</h2>
+<h3 id="基本图形">基本图形</h3>
+<ol>
+<li>到文件
+<ul>
+<li>Microsoft Excel</li>
+</ul>
+</li>
+<li>打开 <strong>人类发展指数.xlsx</strong></li>
+<li>双击左下角 <strong>工作表1</strong>
+<ul>
+<li>重命名为 <strong>人类发展指数</strong></li>
+</ul>
+</li>
+<li>拖拽 <strong>平均寿命</strong> 到 <em>列</em></li>
+<li>拖拽 <strong>生育率</strong> 到 <em>行</em></li>
+<li>工具栏：<strong>标准</strong> -&gt; <em>整个视图</em></li>
+<li>拖拽 <strong>国家</strong> 到 <em>标记/详细信息</em></li>
+<li>拖拽 <strong>年份</strong> 到 <em>标记/详细信息</em></li>
+<li>拖拽 <strong>洲</strong> 到 <em>标记/颜色</em></li>
+<li><strong>标记</strong>：<em>自动</em> -&gt; <em>圆</em></li>
+<li>拖拽 <strong>总人口</strong> 到 <em>标记/大小</em><br>
+<img src="https://kernel2022.github.io/post-images/1641563105885.png" alt="基本图形" loading="lazy"></li>
+</ol>
+<h3 id="动态效果">动态效果</h3>
+<ol>
+<li>拖拽 <strong>年份</strong> 到 <em>页面</em></li>
+<li><strong>标记</strong>：<em>大小</em> 调大一点<br>
+<img src="https://kernel2022.github.io/post-images/1641563485118.png" alt="动态效果" loading="lazy"></li>
+</ol>
+<h2 id="bump-chart凹凸图">Bump Chart（凹凸图）</h2>
+<ol>
+<li>双击左下角 <strong>工作表1</strong>
+<ul>
+<li>重命名为 <strong>人类发展指数</strong></li>
+</ul>
+</li>
+<li>拖拽 <strong>总人口</strong> 到 <em>行</em></li>
+<li>拖拽 <strong>年份</strong> 到 <em>列</em></li>
+<li>工具栏：<strong>标准</strong> -&gt; <em>整个视图</em></li>
+<li>拖拽 <strong>国家</strong> 到 <em>标记/颜色</em>
+<ol>
+<li>筛选后添加
+<ol>
+<li>选中顶部</li>
+<li>按字段<br>
+<img src="https://kernel2022.github.io/post-images/1641564245033.png" alt="筛选后添加" loading="lazy"></li>
+</ol>
+</li>
+</ol>
+</li>
+<li>下拉：<strong>行 / 总人口</strong>
+<ol>
+<li><strong>快速表计算</strong>
+<ol>
+<li><strong>排序</strong></li>
+</ol>
+</li>
+<li><strong>计算依据</strong>
+<ol>
+<li><strong>国家</strong></li>
+</ol>
+</li>
+</ol>
+</li>
+<li>Ctrl（Cmd）+ 拖拽 <strong>行 / 总人口</strong> 到 旁边，复制一份</li>
+<li>选中：<strong>标记/总和（总人口）(2)</strong>
+<ol>
+<li>下拉：<strong>自动</strong> -&gt; <strong>圆</strong></li>
+<li>右击：<strong>标签</strong>
+<ol>
+<li>选中：<strong>显示标记标签</strong></li>
+<li>选中：<strong>允许标签覆盖其它标记</strong></li>
+<li>对齐：<strong>中部  居中</strong></li>
+</ol>
+</li>
+<li>选中：<strong>选中</strong>
+<ol>
+<li>调大一点<br>
+<img src="https://kernel2022.github.io/post-images/1641565227339.png" alt="标签" loading="lazy"></li>
+</ol>
+</li>
+</ol>
+</li>
+<li>拖拽 <strong>年份</strong> 到 <em>筛选器</em>
+<ol>
+<li>值范围
+<ol>
+<li>2000-2011<br>
+<img src="https://kernel2022.github.io/post-images/1641565393452.png" alt="值范围" loading="lazy"></li>
+</ol>
+</li>
+</ol>
+</li>
+<li>下拉：右侧 <strong>行/总人口</strong>
+<ol>
+<li>选中：<strong>双轴</strong></li>
+</ol>
+</li>
+<li>右击：<strong>总人口的排序</strong>
+<ol>
+<li>选中：<strong>同步轴</strong></li>
+<li>选中：<strong>编辑轴</strong>
+<ol>
+<li>选中：<strong>常规/比例/倒序</strong></li>
+</ol>
+</li>
+</ol>
+</li>
+<li>微调：两图的 <strong>标记/大小</strong><br>
+<img src="https://kernel2022.github.io/post-images/1641566429947.png" alt="Bump Chart（凹凸图）" loading="lazy"></li>
+</ol>
+<h2 id="随堂测验">随堂测验</h2>
+<figure data-type="image" tabindex="1"><img src="https://kernel2022.github.io/post-images/1641567179316.png" alt="随堂测验" loading="lazy"></figure>
+
+          </div>
+        </div>
+
+        
+          <div class="next-post">
+            <a class="purple-link" href="https://kernel2022.github.io/post/tableau-day-3/">
+              <h3 class="post-title">
+                下一篇：Tableau Day3：智能分析
+              </h3>
+            </a>
+          </div>
+          
+      </div>
+
+      
+
+      <div class="site-footer">
+  <div class="slogan">及时当勉励，岁月不待人。</div>
+  <div class="social-container">
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+  </div>
+  Powered by <a href="https://www.iosdevlog.com" target="_blank">iosdevlog.com</a> | <a class="rss" href="https://kernel2022.github.io/atom.xml" target="_blank">RSS</a>
+</div>
+
+
+    </div>
+    <script type="application/javascript">
+
+hljs.initHighlightingOnLoad()
+
+var app = new Vue({
+  el: '#app',
+  data: {
+    menuVisible: false,
+  },
+})
+
+</script>
+
+
+
+
+  </body>
+</html>
