@@ -1,0 +1,482 @@
+
+<!DOCTYPE html>
+<html>
+  <head>
+    
+<meta charset="utf-8" >
+
+<title> 《说透芯片》学习笔记 | 贾献华 2022</title>
+<meta name="description" content="及时当勉励，岁月不待人。">
+
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css">
+
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+<link rel="shortcut icon" href="https://kernel2022.github.io/favicon.ico?v=1641733724091">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
+<link rel="stylesheet" href="https://kernel2022.github.io/styles/main.css">
+
+
+
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<script src="https://cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
+
+
+
+  </head>
+  <body>
+    <div id="app" class="main">
+      <div class="site-header-container">
+  <div class="site-header">
+    <div class="left">
+      <a href="https://kernel2022.github.io">
+        <img class="avatar" src="https://kernel2022.github.io/images/avatar.png?v=1641733724091" alt="" width="32px" height="32px">
+      </a>
+      <a href="https://kernel2022.github.io">
+        <h1 class="site-title">贾献华 2022</h1>
+      </a>
+    </div>
+    <div class="right">
+      <transition name="fade">
+        <i class="icon" :class="{ 'icon-close-outline': menuVisible, 'icon-menu-outline': !menuVisible }" @click="menuVisible = !menuVisible"></i>
+      </transition>
+    </div>
+  </div>
+</div>
+
+<transition name="fade">
+  <div class="menu-container" style="display: none;" v-show="menuVisible">
+    <div class="menu-list">
+      
+        
+          <a href="/" class="menu purple-link">
+            首页
+          </a>
+        
+      
+        
+          <a href="/archives" class="menu purple-link">
+            归档
+          </a>
+        
+      
+        
+          <a href="/tags" class="menu purple-link">
+            标签
+          </a>
+        
+      
+        
+          <a href="/post/about" class="menu purple-link">
+            关于
+          </a>
+        
+      
+    </div>
+  </div>
+</transition>
+
+
+      <div class="content-container">
+        <div class="post-detail">
+          
+            <div class="feature-container" style="background-image: url('http://img3.chinadaily.com.cn/images/201811/19/5bf25005a3101a87b1dbfff5.png')">
+            </div>
+          
+          <h2 class="post-title"> 《说透芯片》学习笔记</h2>
+          <div class="post-info post-detail-info">
+            <span><i class="icon-calendar-outline"></i> 2022-01-09</span>
+            
+              <span>
+                <i class="icon-pricetags-outline"></i>
+                
+                  <a href="https://kernel2022.github.io/tag/FjgoklxLB/">
+                    芯片
+                    
+                      ，
+                    
+                  </a>
+                
+                  <a href="https://kernel2022.github.io/tag/E_0WOKvAgZ/">
+                    极课时间
+                    
+                  </a>
+                
+              </span>
+            
+          </div>
+          <div class="post-content">
+            <h2 id="芯片和半导体是不是一回事儿呢">芯片和半导体是不是一回事儿呢？</h2>
+<p>芯片和半导体是同一个事物的两个名字。</p>
+<ul>
+<li>芯片是半导体产业的产品</li>
+<li>半导体是用来做芯片的材料</li>
+</ul>
+<!-- more -->
+<ul>
+<li>通俗一点，就叫 <strong>芯片行业</strong></li>
+<li>学术一点，就叫 <strong>半导体行业</strong></li>
+<li>半导体行业，就是拿晶体管去堆集成电路的行业。</li>
+</ul>
+<h3 id="计算机发展的四个阶段">计算机发展的四个阶段</h3>
+<ol>
+<li>第一代：电子管（真空管）（1957年以前）</li>
+<li>第二代：晶体管（1958 - 1963年）</li>
+<li>第三代：集成电路（IC、LSI）（1964 - 1969年）</li>
+<li>第四代：大规模集成电路（1970年以后）</li>
+</ol>
+<h2 id="从一部iphone手机看芯片的分类">从一部iPhone手机看芯片的分类</h2>
+<p>芯片里面，大约只有 80% 属于集成电路，其余的都是光电器件、传感器和分立器件，行业内把这些器件称为 O-S-D（Optoelectronic, Sensor, Discrete）。<br>
+<img src="https://kernel2022.github.io/post-images/1641718925159.webp" alt="" loading="lazy"><br>
+<img src="https://kernel2022.github.io/post-images/1641711733616.webp" alt="" loading="lazy"><br>
+<img src="https://kernel2022.github.io/post-images/1641711784282.webp" alt="" loading="lazy"></p>
+<h2 id="芯片设计一颗芯片到底是如何诞生的">芯片设计：一颗芯片到底是如何诞生的</h2>
+<p><img src="https://kernel2022.github.io/post-images/1641712735823.webp" alt="流程图" loading="lazy"><br>
+<img src="https://kernel2022.github.io/post-images/1641712779305.webp" alt="" loading="lazy"><br>
+<img src="https://kernel2022.github.io/post-images/1641712916972.webp" alt="苹果 A12 系统架构图" loading="lazy"></p>
+<h3 id="逻辑设计">逻辑设计</h3>
+<p>前端设计（逻辑设计）一般用硬件描述语言，例如 Verilog，将架构师的设计用编码实现。大型芯片项目，设计也是分层次的。先进行模块设计，底层的模块写完之后，把新写的模块、商业 IP、复用的旧 IP 等整合在一起，形成一个完整的设计。<br>
+其实硬件描述语言，看起来跟 C 语言颇为类似，不过写 C 语言的人，心里想着“hello world”，写 Verilog HDL 的人，心里想着电路图。<br>
+<img src="https://kernel2022.github.io/post-images/1641713073708.webp" alt="Verilog" loading="lazy"></p>
+<h3 id="逻辑综合-logic-synthesis">逻辑综合 （Logic Synthesis）</h3>
+<p>用 EDA 工具把寄存器传输级设计 RTL 描述变网表（Netlist），非常类似于编译器把 C 语言翻译成机器语言的过程。从这一步开始，芯片的设计就和具体的晶圆代工厂和具体工艺绑定在一起，设计开始具有物理特征了。<br>
+<img src="https://kernel2022.github.io/post-images/1641713232269.webp" alt="逻辑综合" loading="lazy"></p>
+<h3 id="dft可测试性设计-design-for-test">DFT（可测试性设计 Design For Test）</h3>
+<h3 id="物理实现">物理实现</h3>
+<p>后端设计的主要步骤可以总结为：布局规划 Floorplan→布局 Placement→时钟树综合 CTS→布线 Routing →物理验证。<br>
+<img src="https://kernel2022.github.io/post-images/1641713318132.webp" alt="苹果 A11 的布局规划" loading="lazy"><br>
+一颗芯片做得好不好，</p>
+<ol>
+<li>在决策阶段取决于市场需求理解的是否深刻</li>
+<li>在逻辑设计阶段取决于工程师的能力强不强</li>
+<li>而在物理实现阶段基本取决于 EDA 工具玩得好不好<br>
+<img src="https://kernel2022.github.io/post-images/1641713400938.webp" alt="电路图" loading="lazy"><br>
+如果仔细看每个晶体管，都是由硅基底（Silicon Substrate）、氧化层（Oxide）、鳍（Fin）、栅（Gate）构成的。<br>
+<img src="https://kernel2022.github.io/post-images/1641713488169.webp" alt="晶体管" loading="lazy"></li>
+</ol>
+<h3 id="芯片制造晶圆厂的王国">芯片制造：晶圆厂的王国</h3>
+<h4 id="上游晶圆材料准备">上游：晶圆材料准备</h4>
+<figure data-type="image" tabindex="1"><img src="https://kernel2022.github.io/post-images/1641713552021.webp" alt="纯硅晶圆" loading="lazy"></figure>
+<h4 id="中游晶圆加工过程">中游：晶圆加工过程</h4>
+<p><img src="https://kernel2022.github.io/post-images/1641713634294.webp" alt="晶圆加工过程" loading="lazy"><br>
+光刻<br>
+<img src="https://kernel2022.github.io/post-images/1641713714856.webp" alt="光罩" loading="lazy"><br>
+<img src="https://kernel2022.github.io/post-images/1641713757186.webp" alt="光刻" loading="lazy"></p>
+<h4 id="下游封装与测试">下游：封装与测试</h4>
+<p><img src="https://kernel2022.github.io/post-images/1641714109217.webp" alt="封装" loading="lazy"><br>
+产业链分工视角：设计、制造、封装、测试的分工合作<br>
+<img src="https://kernel2022.github.io/post-images/1641714935332.webp" alt="产业链分工视角" loading="lazy"><br>
+<img src="https://kernel2022.github.io/post-images/1641715012884.webp" alt="10nm 工艺制程" loading="lazy"></p>
+<h3 id="总结">总结</h3>
+<ol>
+<li>半导体行业的两个重要增值的过程是：晶圆加工和芯片设计。最先进工艺的晶圆制造，价值不菲，是制造业的顶级工艺。</li>
+<li>晶圆的加工过程，就是在晶圆上制造集成电路的过程。更准确的说，是在晶圆构造海量晶体管的过程。其中光刻环节最为重要。</li>
+<li>晶圆加工完成之后，还要经过切割，测试，封装为芯片。封装技术，已经成为和架构、工艺并行的第三大技术。</li>
+<li>台积电的出现，促使了半导体公司由一包到底的 IDM 模式，向代工模式转换。半导体行业是全球化分工最早最彻底的行业之一。</li>
+</ol>
+<h2 id="intel的发展史">Intel的发展史</h2>
+<figure data-type="image" tabindex="2"><img src="https://kernel2022.github.io/post-images/1641715278756.webp" alt="" loading="lazy"></figure>
+<h3 id="四个发展阶段">四个发展阶段</h3>
+<p><img src="https://kernel2022.github.io/post-images/1641715355063.webp" alt="四个发展阶段" loading="lazy"><br>
+选择 CPU 作为主产品<br>
+<img src="https://kernel2022.github.io/post-images/1641715617120.webp" alt="8086 Die（裸片）" loading="lazy"></p>
+<h3 id="cpu-问鼎之路">CPU 问鼎之路</h3>
+<figure data-type="image" tabindex="3"><img src="https://kernel2022.github.io/post-images/1641717967404.webp" alt="充分竞争" loading="lazy"></figure>
+<h3 id="tick-tock-策略">Tick-Tock 策略</h3>
+<p><img src="https://kernel2022.github.io/post-images/1641718018822.webp" alt="嘀嗒" loading="lazy"><br>
+<img src="https://kernel2022.github.io/post-images/1641718106248.webp" alt="工艺进步" loading="lazy"></p>
+<h3 id="错失移动互联网">错失移动互联网</h3>
+<p>到了 2016 年，工厂在研发新工艺方面，频频出现失误、延期、良率问题，一句话总结就是：工艺的进步，突然停止了，Intel Tick-Tock 的摩尔时钟停摆了。<br>
+Intel 尝试把 Tick-Tock 变成 PAO 策略，就是所谓的 Process（制程）-Architecture（架构）-Optimization（优化）三步走战略，3 年更新一次制程，</p>
+<h3 id="总结-2">总结</h3>
+<ol>
+<li>Intel 的成功是摩尔定律的成功，是不断突破极限的产品开发的成功。</li>
+<li>在半导体行业，除了设计和生产两个方面，Intel 最先意识到指令集向后兼容性的价值，也因此，它战胜了 Zilog 的 Z80，也才有了 Wintel 联盟形成的强大的 x86 生态。</li>
+<li>赢得 PC 市场，Intel 得益于 IBM PC 与兼容机全开放式的思路，Intel 与 AMD 这对兄弟相杀相爱多年，在服务器市场，他们是同盟军，联手绞杀一众古典 RISC 厂商。在 PC 市场，他们又是你死我活的竞争对手。</li>
+<li>Intel 的 Tick-Tock 策略，曾经是行业标准的摩尔时钟，在 Intel 的 Tick-Tock 失速之后，其实是苹果默默接手，推动行业继续按照摩尔定律发展。因此是否能重启 Tick-Tock 策略，才是 Intel 的生死关键。</li>
+</ol>
+<h2 id="三星资本与技术共舞的40年">三星：资本与技术共舞的40年</h2>
+<p>公司的成功三要素</p>
+<ol>
+<li>市场</li>
+<li>资金</li>
+<li>技术<br>
+<img src="https://kernel2022.github.io/post-images/1641718925159.webp" alt="2020 财年三星电子的收入比例图" loading="lazy"><br>
+<img src="https://kernel2022.github.io/post-images/1641718989615.webp" alt="DRAM 和 NAND Flash 在 2019 年的供应商市场份额" loading="lazy"></li>
+</ol>
+<h3 id="三星存储芯片业务逆周期投资">三星存储芯片业务：逆周期投资</h3>
+<figure data-type="image" tabindex="4"><img src="https://kernel2022.github.io/post-images/1641719209997.webp" alt="" loading="lazy"></figure>
+<h3 id="三星代工业务后发先至的逆袭之路">三星代工业务：后发先至的逆袭之路</h3>
+<p>三星要冲击行业第一，把工厂的制造能力打造成最核心竞争力。</p>
+<h3 id="三星的手机处理器">三星的手机处理器</h3>
+<p>手机处理器有三大技术能力：</p>
+<ol>
+<li>CPU</li>
+<li>GPU</li>
+<li>基带<br>
+三星在 CPU 方向，4 年花了上千亿人民币，最终以失败退场；三星和 AMD 的合作，算是三星在 GPU 上的努力，效果尚未知。在基带方面，2020 年底三星虽然发布了首款 5nm 工艺 5G 基带芯片，但尚未自用。</li>
+</ol>
+<h3 id="总结-3">总结</h3>
+<ol>
+<li>三星靠着技术和资金的双重优势，牢牢地占据了存储芯片行业第一的位置。</li>
+<li>三星的代工业务算是屡败屡战的案例，代工业务的高资金投入，非常符合三星激进的投资策略，因此在 15 年之内就迅速成为行业第二。如果 GAA 技术押对宝，三星有很大机会实现行业第一的目标。</li>
+<li>三星的手机处理器业务就比较徘徊了。但是三星的持续努力的精神，值得所有企业的敬重和学习。</li>
+</ol>
+<h2 id="台积电摩尔定律的忠实执行者">台积电：摩尔定律的忠实执行者</h2>
+<h3 id="重塑产业格局激励创新">重塑产业格局：激励创新</h3>
+<p>台积电要成功必须得同时满足这三个条件，分别代表了三个层面：</p>
+<ol>
+<li>要有工艺水平</li>
+<li>有客户需求</li>
+<li>要比 IDM 模式赚钱</li>
+</ol>
+<h3 id="提升工艺水平成为行业第一">提升工艺水平，成为行业第一</h3>
+<figure data-type="image" tabindex="5"><img src="https://kernel2022.github.io/post-images/1641719886422.webp" alt=" 7nm 制程并进入量产" loading="lazy"></figure>
+<h3 id="先进的客户需求成重要助推器">先进的客户需求成重要助推器</h3>
+<figure data-type="image" tabindex="6"><img src="https://kernel2022.github.io/post-images/1641719921355.webp" alt="客户线" loading="lazy"></figure>
+<h3 id="与-idm-模式竞争保持产能与需求之间的平衡">与 IDM 模式竞争，保持产能与需求之间的平衡</h3>
+<p>“让晶圆厂持续高产能运转”，在产能和需求之间保持平衡，这是一项艺术。</p>
+<h3 id="稳健投资摩尔定律的忠实执行者">稳健投资：摩尔定律的忠实执行者</h3>
+<p><img src="https://kernel2022.github.io/post-images/1641720126426.webp" alt="" loading="lazy"><br>
+多年来，台积电一直保持着“高投入 - 低成本 - 高销量 - 高投入”的正向循环。</p>
+<h3 id="苹果需要单独讲讲的超级客户">苹果：需要单独讲讲的超级客户</h3>
+<p>2019 年、2020 年，苹果都是世界上最大的半导体产品买家，台积电所有业务中有 25％直接或间接来自苹果，除了代工苹果的自研芯片以外，苹果购买高通、博通、AMD、德州仪器、意法半导体、恩智浦和瑞萨等公司的产品也是台积电代工。</p>
+<h3 id="总结-4">总结</h3>
+<ol>
+<li>没有台积电开创的代工模式，现在 70% 的半导体公司都将不存在。</li>
+<li>台积电在需求和产能，这个半导体制造业最难权衡的一对矛盾上，非常艺术地保持了平衡。</li>
+<li>台积电基本上用自己赚到钱，投入扩大再生产，不但技术一直领先，而且投资利润率也远超同行，简直是行业的压舱石。</li>
+<li>台积电是 2015 年之后，接替 Intel，成为半导体业保持摩尔定律的动力来源。</li>
+</ol>
+<h2 id="nvidia-与ai-芯片超越摩尔定律">Nvidia 与AI 芯片：超越摩尔定律</h2>
+<h3 id="gpu-开局">GPU 开局</h3>
+<p><img src="https://kernel2022.github.io/post-images/1641720601964.webp" alt="" loading="lazy"><br>
+<img src="https://kernel2022.github.io/post-images/1641720665861.webp" alt="GPU 处理一个 3D 桌子图像的绘制示意图" loading="lazy"><br>
+<img src="https://kernel2022.github.io/post-images/1641720699400.webp" alt="OpenGL 做渲染的处理流程图" loading="lazy"><br>
+伟达两个非常宝贵的经验：<br>
+第一，超摩尔速度，就是被业界称为“黄氏定律”的：“半年更新，一年换代”；<br>
+第二，就是软硬件之间的标准的重要性。</p>
+<h3 id="gpgpu点亮并行计算的科技树">GPGPU：点亮并行计算的科技树</h3>
+<p>General Purpose 通用的意思。<br>
+** CUDA（Compute Unified Device Architecture，统一计算架构）**，CUDA 不仅仅是一个 GPU 计算的框架，它对下抽象了所有的英伟达出品的 GPU，对上构建了一个通用的编程框架，它实质上制定了一个 GPU 和上层软件之间的接口标准。</p>
+<p><strong>一流企业定标准，二流企业做品牌，三流企业做产品。</strong><br>
+在所有的半导体公司中，制定出软件与硬件之间的标准，而且现在还算成功的，只有 3 个</p>
+<ol>
+<li>x86 指令集: Wintel 的生态是微软帮忙建的</li>
+<li>ARM 指令集: ARM-Android 的生态是 Google 建的</li>
+<li>CUDA: GPU-CUDA 的生态是英伟达自建的<br>
+<img src="https://kernel2022.github.io/post-images/1641721022643.webp" alt="GPU 相对 CPU 的 TOPS per Watt（花费每瓦特电能可以获得的算力）的差异竞争优势" loading="lazy"></li>
+</ol>
+<h3 id="ai-的风口下英伟达腾飞">AI 的风口下，英伟达腾飞</h3>
+<p><img src="https://kernel2022.github.io/post-images/1641721182712.webp" alt="人工智能、机器学习和深度学习的关系" loading="lazy"><br>
+<img src="https://kernel2022.github.io/post-images/1641721222937.webp" alt="识别“猫”" loading="lazy"><br>
+<img src="https://kernel2022.github.io/post-images/1641721263916.webp" alt="深度神经网络" loading="lazy"><br>
+硬件行业的 3 次风口：</p>
+<ol>
+<li>第一次 PC</li>
+<li>第二次手机与移动互联网</li>
+<li>第三次就是 AI+5G+IoT</li>
+</ol>
+<h3 id="总结-5">总结</h3>
+<ol>
+<li>现在市值超越 Intel 的英伟达，是从做图形加速的 GPU 开始的，早期 GPU 一直作为 CPU 的加速器存在。</li>
+<li>但是英伟达用 CUDA，建立了并行计算的事实标准，无论是科学计算，还是计算机图形科学、计算机辅助设计，CUDA 都向上构建了最底层的编程框架，向下抽象了英伟达的所有 GPU 微架构。自此，英伟达从一个做产品的公司，进阶为做标准的公司。</li>
+<li>GPU 和机器学习，相互成就，替人类打开了人工智能方向的一扇全新的大门，人类世界对英伟达的回报，就是超出业界预计的高市值。</li>
+</ol>
+<h2 id="德州仪器模拟芯片的无冕之王">德州仪器：模拟芯片的无冕之王</h2>
+<h3 id="第一次转型搭上半导体行业的火箭">第一次转型：搭上半导体行业的火箭</h3>
+<p>德州仪器在 1979 年，输掉了和 Intel 的微处理器的比赛之后，开始制定微处理器之后的未来路线。它制定了发展数字<strong>信号处理器（DSP）<strong>和</strong>嵌入式处理器</strong>的策略。</p>
+<h3 id="第二次转型进入手机处理器市场">第二次转型：进入手机处理器市场</h3>
+<p>手机处理器，有三项主要技术：CPU、GPU 和基带。<br>
+德州仪器的 OMAP 系列处理器，CPU 用了 ARM，GPU 用了 Imagination 公司的 PowerVR，跟后来苹果 A 系列用的是一模一样的，德州仪器自己家也有信号质量非常过硬的 GSM/GPRS，就是 2G 基带芯片，因此三项技术皆强。<br>
+客户方面，德州仪器拿下了 2G 时代最强的诺基亚和摩托罗拉，一时间风头无两。</p>
+<h3 id="第三次转型模拟市场加冕之路">第三次转型：模拟市场加冕之路</h3>
+<p>转型：消减无关业务<br>
+<img src="https://kernel2022.github.io/post-images/1641722165769.webp" alt="" loading="lazy"><br>
+收购：市场份额与产品品类，引进人才<br>
+<img src="https://kernel2022.github.io/post-images/1641722213940.webp" alt="德州仪器收购公司的时间表" loading="lazy"></p>
+<h3 id="建厂构建最佳成本结构">建厂：构建最佳成本结构</h3>
+<p>自 2013 年开始到现在，德州仪器在模拟 IC 市场的营收就是行业老二亚德诺半导体（ADI）的两倍。<br>
+没有一款电子设备不需要模拟芯片，在模拟芯片领域，德州仪器是无可争议的市场领导者，在整个半导体界有着举足轻重的地位。但是德州仪器的传奇，可没有止步于模拟芯片第一。<br>
+它从来不是被动转型的公司，它是主动改革的弄潮儿。</p>
+<h3 id="主动改革的重要举措取消代理分销">主动改革的重要举措：取消代理分销</h3>
+<p>取消代理，一个直观的好处是德州仪器可以直接访问到客户的项目，每个项目的每颗芯片机会，对客户所作所为有非常直观的洞见，这是靠代理的竞争者所没有的优势。当然，砍掉代理商的利润，肯定也可以提高毛利。</p>
+<h2 id="总结-6">总结</h2>
+<ol>
+<li>德州仪器一直就是一个长业务线的公司，它有机会接触到所有市场上的所有机会。但是德州仪器对好产品的定义，让它和整个半导体业界，区别开来。半导体业界普遍推崇高价值，海量的单一产品，例如 CPU、存储、基带芯片等等。而德州仪器则以长生命周期、多客户、多应用场景的标准品为追求目标。</li>
+<li>像模拟芯片这种类型的产品，要开发成千上万的产品，同时还需要很强的制造能力，才能控制好成本结构，而这些恰恰是德州仪器的核心竞争力。</li>
+<li>德州仪器，从来都是一个主动创新的公司，它在 2019 年取消三大代理，仅保留一家的做法，震惊了业界。互联网在线销售和直销，肯定会提高对客户的洞见度和毛利，算是半导体公司第一次互联网化的新创举。长期是否会造成大量的小客户流失，目前尚未可知。但是对于中国模拟芯片企业，倒是一个难得的机会。</li>
+</ol>
+<h2 id="其他半导体公司美国双通与欧洲双雄">其他半导体公司：美国双通与欧洲双雄</h2>
+<figure data-type="image" tabindex="7"><img src="https://kernel2022.github.io/post-images/1641722455348.webp" alt="5 年内的前十名" loading="lazy"></figure>
+<h3 id="高通quality-communicationscdma-标准的制定者">高通（QUALity COMMunications）：CDMA 标准的制定者</h3>
+<figure data-type="image" tabindex="8"><img src="https://kernel2022.github.io/post-images/1641722644221.webp" alt="1G 到 5G 的速率增速" loading="lazy"></figure>
+<h3 id="博通半导体公司的并购史">博通：半导体公司的并购史</h3>
+<p><img src="https://kernel2022.github.io/post-images/1641722798095.webp" alt="博通公开发表资料" loading="lazy"><br>
+<img src="https://kernel2022.github.io/post-images/1641722871472.webp" alt="" loading="lazy"><br>
+<img src="https://kernel2022.github.io/post-images/1641722955034.webp" alt="" loading="lazy"><br>
+<img src="https://kernel2022.github.io/post-images/1641722987186.webp" alt="" loading="lazy"></p>
+<h3 id="欧洲双雄恩智浦和英飞凌">欧洲双雄：恩智浦和英飞凌</h3>
+<p>欧洲三杰（英飞凌、恩智浦和意法半导体）<br>
+<strong>恩智浦</strong>，前身是著名的飞利浦公司的半导体业务部。恩智浦在收购了美国的飞思卡尔半导体之后，这才超越英飞凌成了欧洲老大，可见收购至少对排名有贡献。<br>
+<strong>英飞凌</strong>，也是系出名门，英飞凌科技公司前身是西门子集团的半导体部门，于 1999 年独立，2000 年就完成了上市。<br>
+<strong>意法半导体</strong>成立于 1987 年，是意大利 SGS 半导体公司和法国汤姆逊半导体公司合并后的新企业。</p>
+<h3 id="自制芯片in-house-design的卷土重来与创业公司">自制芯片（In-House Design）的卷土重来与创业公司</h3>
+<p>跟随着系统制造商的脚步，互联网大厂也开始自己设计芯片了。比如 Google 的 AI 芯片 TPU 家族，AWS 的智能网卡芯片 Nitro、ARM 处理器 Graviton、AI 芯片 Inferentia、Trainium，百度的昆仑，阿里的含光等。</p>
+<h2 id="总结-7">总结</h2>
+<ol>
+<li>Intel 是 CPU 第一，三星是存储第一，台积电是代工厂第一，英伟达是 GPU 第一，德州仪器是模拟芯片之王。</li>
+<li>网络双通是高通和博通，欧洲双雄是恩智浦与英飞凌，它们也可以和意法半导体一起称为欧洲三杰，再加上日本瑞萨，这四家半导体公司与汽车行业休戚相关。</li>
+<li>苹果、华为、特斯拉，互联网巨头们，还有思科，不但自制芯片且开始对外出售，感谢这些新入局者，给半导体行业带来新的创新力。</li>
+</ol>
+<h2 id="中国芯片业的发展历史">中国芯片业的发展历史</h2>
+<h3 id="2000-年之前国家计划与政策扶持">2000 年之前：国家计划与政策扶持</h3>
+<p>其实，中国的半导体产业初期服务军工，自研能力不低，但是几乎全是国有企业。离开了政策的扶持，离开了军工的订单，这些国企并没有很好的度过军转民这一个弯，甚至在 80 年代改革开放后，进口半导体产品的冲击下，几乎停滞。2000 年左右，中国芯片设计公司，不足 100 家，总收入不到一亿美元。</p>
+<h3 id="2000-年-2014-年市场带动产业发展">2000 年 -2014 年：市场带动产业发展</h3>
+<p>2000 年，中芯国际成立，可以成为中国半导体历史上的另一个里程碑事件，因为中芯国际一开始就奔着“世界先进水平”的目标去的。仅仅在开工建设 13 个月后，2001 年 9 月 25 日，中芯国际一厂投产，4 个月后量产，投产和量产速度均创造了世界之最。</p>
+<h4 id="电信市场">电信市场</h4>
+<p>“巨大中华”之称的四大公司</p>
+<ol>
+<li>巨龙通信</li>
+<li>大唐电信</li>
+<li>华为</li>
+<li>中兴</li>
+</ol>
+<h4 id="手机市场">手机市场</h4>
+<ul>
+<li>海思凭借麒麟，在 2020 年上半年拿到全世界半导体排名前十。</li>
+<li>锐迪科（RDA），成立于 2004 年 4 月，是射频 IC、混合信号芯片和手机功率放大器 PA 的专家。锐迪科不仅仅在手机市场，还在无线连接和广播通信市场有多款创新产品。2010 年成功登陆纳斯达克的时候，锐迪科已经是中国市场第一名的功率放大器、蓝牙、FM 与 DVB-S 调谐器芯片供应商，GSM 基带的第二供应商。</li>
+<li>后来源自锐迪科系的创业公司，包括翱捷科技、恒玄科技等 8 家公司，撑起了中国射频芯片领域的半壁江山。</li>
+<li>汇顶科技成立于 2002 年，几乎所有手机都用了它家的指纹识别芯片，仅有三星采用了高通的芯片。豪威科技，后被威尔科技收购，在 CMOS 图像传感器芯片市场排名全球第三。</li>
+</ul>
+<h4 id="比特币矿机">比特币矿机</h4>
+<p>比特大陆成立于 2013 年，不但在矿机芯片上世界第一，而且公司依靠自己在高性能芯片上的设计能力，积极拓展人工智能和高性能计算市场。比特大陆曾经一度超越海思，成为台积电大陆地区第一大客户。<br>
+同年成立的嘉楠科技则是仅次于比特大陆的第二大矿机芯片厂商，虽然在矿机芯片上的营收位列第二，但是运气好，2019 年成功在美国纳斯达克上市。嘉楠科技同样要把从先进 ASIC 矿机芯片设计中积累的技术优势，投入在人工智能和高效能计算上。</p>
+<h4 id="其它市场上活跃的中国半导体公司">其它市场上活跃的中国半导体公司</h4>
+<p>其实，这个时期成立的半导体公司还有很多，例如靠白牌平板电脑起家的瑞芯微、全志。凭借 NOR Flash 芯片进入苹果供应链的兆易创新，还有核高基项目重点支持的 CPU 公司：兆芯、龙芯、飞腾、海光等。还有 2014 年，长电科技以 7.8 亿美元收购新加坡星科金朋，成为全球封测第三。<br>
+国际上，半导体产业格局稳定，巨头们忙着大鱼吃小鱼，搞收购兼并的时候，中国的半导体产业凭借着中国市场得天独厚的优势走出自己的节奏。</p>
+<h3 id="2014-年后投资产业时代">2014 年后：投资产业时代</h3>
+<h4 id="紫光集团">紫光集团</h4>
+<p>紫光集团是这个时期最为瞩目的企业，特别是几个大手笔的国内外企业并购重组活动，成为行业内都在关注的事情。<br>
+长江存储在量产 64 层 NAND Flash 之后，2020 年首发 192 层 3D NAND，被预测 2021 会拿下 8% 的 NAND Flash 份额。<br>
+同时，在存储芯片领域，中国还有一家公司叫做长鑫存储，长鑫存储以唯一一家中国公司的名号，杀入 DRAM 领域。<br>
+<img src="https://kernel2022.github.io/post-images/1641724373667.webp" alt="" loading="lazy"></p>
+<h3 id="总结-8">总结</h3>
+<p>中国半导体产业的历史可以分为三段</p>
+<ol>
+<li>一是 2000 年之前，国家政策驱动 + 专家学者努力的 1.0 阶段。</li>
+<li>然后是以 2000 年中芯国际成立为标志，2000 年 -2014 年之间，市场带动产业发展的 2.0 阶段。</li>
+<li>而在 2014 年之后，国家大基金成立，标志着国家的产业政策升级进入政策加资金的双重保证阶段，大基金亲自下场，积极建设、扶植，中国进入国家资本 + 商业资本 + 产业努力的 3.0 阶段。</li>
+</ol>
+<h2 id="中国芯片现状与机会">中国芯片现状与机会</h2>
+<h3 id="中国的巨大市场机会">中国的巨大市场机会</h3>
+<p><img src="https://kernel2022.github.io/post-images/1641724499966.webp" alt="半导体产品的十大买家" loading="lazy"><br>
+<img src="https://kernel2022.github.io/post-images/1641724595806.webp" alt="核心芯片占比" loading="lazy"></p>
+<h3 id="破局点先进技术方向">破局点：先进技术方向</h3>
+<p>芯片制造：光刻机、晶体管架构、先进封装<br>
+短波长光源是提高光刻机分辨率的有效方法。<br>
+因此看光刻机的发展历史，就从<strong>紫外光源（UV）</strong>、<strong>深紫外光源（DUV）</strong>，发展到了现在的<strong>极紫外光源（EUV）</strong>。<br>
+<img src="https://kernel2022.github.io/post-images/1641724802299.webp" alt="" loading="lazy"><br>
+<img src="https://kernel2022.github.io/post-images/1641724823035.webp" alt="晶体管的架构" loading="lazy"><br>
+<img src="https://kernel2022.github.io/post-images/1641724863387.webp" alt="存储芯片技术在短时间内没有技术瓶颈" loading="lazy"><br>
+<img src="https://kernel2022.github.io/post-images/1641724939794.webp" alt="Die 异构封装" loading="lazy"></p>
+<h3 id="芯片设计存内计算-整-wafer-芯片-光子计算和量子计算">芯片设计：存内计算、整 Wafer 芯片、光子计算和量子计算</h3>
+<p>还有超摩尔定律的光子芯片、量子计算等。特别是光子芯片，相对于硅芯片，在延时、带宽、功耗方面都有超 10 倍的优势，而且已经有公司在进行商业化实现了。</p>
+<h3 id="中国的互联网新势力">中国的互联网新势力</h3>
+<p>百度是国内最早自研芯片的公司，第二代昆仑在 2020 年芯片界的年度盛会 Hotchips 上亮相，也将于今年实现量产。据称也在募资，但是到目前为止并没有成立新公司的消息。<br>
+阿里巴巴 2018 年成立“平头哥半导体有限公司”，2019 年宣布全球性能最强的人工智能芯片含光 800 和业界最强的 RISC- V 处理器玄铁 910，是国内互联网规模最大，也最正式的芯片团队。我很喜欢阿里巴巴集团 CTO、达摩院院长张建锋对平头哥的定位：“在全球芯片领域，阿里巴巴是一个新人，玄铁和含光 800 是平头哥的万里长征第一步，我们还有很长的路要走。”<br>
+至于腾讯和字节这两家公司，多次有在研芯片的小道消息曝光，但是尚无正式的产品发布会。<br>
+<img src="https://kernel2022.github.io/post-images/1641725266025.jpg" alt="" loading="lazy"></p>
+<h2 id="总结-9">总结</h2>
+<ol>
+<li>中国芯片市场大约占全球市场的三分之一。但是中国公司出产的芯片，只占到全世界产量的 5%。特别是在计算机系统、通用电子系统、通信装备、存储设备、显示及视频系统中的核心芯片，国产芯片的比例非常低。市场巨大，但目前中国产业能力有限，这就是中国芯片行业的现状。</li>
+<li>芯片制造业在积极研发新光刻机、新晶体管架构、新材料、新封装技术；芯片设计行业也在存内计算、光子计算、量子计算等前沿方向探索。未来的 8-10 年，摩尔定律依然生效，甚至有可能出现超越摩尔定律的突破。</li>
+<li>互联网这股新力量的加入，会让芯片行业有更多的创新能力。中国的互联网行业一直在世界的前列，希望这股新力量能推动芯片行业的加速发展。</li>
+</ol>
+<h2 id="张忠谋分析台湾半导体晶圆制造的优势">张忠谋分析台湾半导体晶圆制造的优势</h2>
+<ul>
+<li>半导体产业的分工从 1960 年代开始，封装测试先分离出来，再到芯片设计，再到晶圆制造。1987 年台积电成立，与 IDM 模式半导体公司的晶圆制造部门竞争，扰乱了半导体产业。</li>
+<li>台湾目前的优势有三点，一是人才敬业；二是经理人都是台湾人，在台湾一流；三是交通便利，适合大规模制造业人员流动。</li>
+<li>台积电已经是半导体制造领域的技术领袖，在已开发世界约 25 亿人口中，几乎每个人都在日常生活或工作中用到台积电制造的半导体产品。</li>
+<li>在晶圆制造上，美国的土地、水、电条件优于台积电，但在人才敬业等层面，台积电占优势。美国短期补贴不足以弥补长期劣势。</li>
+<li>大陆半导体制造落后台积电 5 年以上，逻辑半导体设计落后美国、台湾 1~2 年。</li>
+<li>在晶圆制造领域，台积电最强劲的对手是三星，韩国在晶圆制造方面的优势和台湾相似。</li>
+</ul>
+<h2 id="arm-与-risc-v">ARM 与 RISC-V</h2>
+<p><strong>指令集</strong>: 软件通过一个专业词汇上称为指令集的东西和硬件讲话。<br>
+换句话说，指令集是软硬件之间沟通的桥梁。如果在晶体管、集成电路和摩尔定律之外，再给一个重点概念，那就是指令集了。<br>
+其实** ISA= 指令集 = 架构**，都是一个意思。<br>
+而实现了一个指令集的 CPU 叫微架构。<br>
+当我们说 ARM 的时候，我们不太关注这个拥有 6000 员工，总部在英国但被软银收购后已经成为一家日本公司的企业故事，或者是在网上可以公开看到的那本 5000 多页的 ARMv8 指令集手册。我们更多提到的是硬件侧高通的骁龙、联发科的天玑、华为的麒麟、三星的 Galaxy、AWS 的 Graviton、苹果的全家桶，和软件侧的 Android、iOS、Red Hat、Ubuntu、SUSE、麒麟 OS，等等，它们都在 ARM 的生态系统里。 我们关注的是整个 ARM 生态系统。<br>
+类似的，我们在说 x86 的时候，也不仅仅指的是 Intel 和 AMD，还有在 x86 生态系统里的微软、Linux、Oracle、SAP 等等。但是 x86，并不是一个公开授权的指令集，虽然并不仅仅有 Intel 和 AMD 两家，但是对于新入局者来说，做 x86 指令集的机会几乎微乎其微。相对来说，ARM 和 RISC-V 都是开放授权的指令集。ARM 是商业授权指令集，RISC-V 是开源的指令集。至于 CPU 核，也就是微架构，两家都是商业授权模式，就是要付费的。<br>
+<img src="https://kernel2022.github.io/post-images/1641726092685.webp" alt="" loading="lazy"><br>
+RISC-V 诞生于美国 UC Berkeley 大学，最初是个开放为教学服务的指令集。但 RISC-V 因为有着精简、高效、低能耗、模块化、可拓展、免费开放、无历史负累低效指令等优势，很快就出圈了，因此 RISC-V 团队在认识到它的价值之后，就决定将之推出市场进行商业化探索。<br>
+RISC-V 架构秉承简单的设计哲学，完全抛弃历史包袱，从轻上路，借助计算机体系结构，经过多年的发展已经成为比较成熟的技术。RISC-V 基础指令集则只有 40 多条，加上其他的模块化扩展指令总共几十条指令。RISC-V 的规范文档仅有 145 页，而“特权架构文档”这样重要的内容，篇幅也仅为 91 页。<br>
+<img src="https://kernel2022.github.io/post-images/1641726166078.webp" alt="RISC-V" loading="lazy"><br>
+三条 RISC-V 作为指令集的成功标志：</p>
+<ol>
+<li>最新工艺的 SoC 量产</li>
+<li>有软件支持的里程碑</li>
+<li>支持杀手级应用或者说核心市场的 25% 市场份额</li>
+</ol>
+<p>RISC-V 最大的优势有三点：</p>
+<ol>
+<li>第一，开源优势。</li>
+<li>其次，产业发展需要领域专用架构 DSA（Domain Specific Architecture）的硬件。</li>
+<li>最后一个优势，中美之争给了所有“非美技术”一个机会。</li>
+</ol>
+
+          </div>
+        </div>
+
+        
+          <div class="next-post">
+            <a class="purple-link" href="https://kernel2022.github.io/post/tableau-day-4/">
+              <h3 class="post-title">
+                下一篇：Tableau Day4：时间分析
+              </h3>
+            </a>
+          </div>
+          
+      </div>
+
+      
+
+      <div class="site-footer">
+  <div class="slogan">及时当勉励，岁月不待人。</div>
+  <div class="social-container">
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+  </div>
+  Powered by <a href="https://www.iosdevlog.com" target="_blank">iosdevlog.com</a> | <a class="rss" href="https://kernel2022.github.io/atom.xml" target="_blank">RSS</a>
+</div>
+
+
+    </div>
+    <script type="application/javascript">
+
+hljs.initHighlightingOnLoad()
+
+var app = new Vue({
+  el: '#app',
+  data: {
+    menuVisible: false,
+  },
+})
+
+</script>
+
+
+
+
+  </body>
+</html>
