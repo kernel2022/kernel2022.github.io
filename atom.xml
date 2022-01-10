@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://kernel2022.github.io</id>
     <title>贾献华 2022</title>
-    <updated>2022-01-09T13:08:47.556Z</updated>
+    <updated>2022-01-10T15:36:55.185Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://kernel2022.github.io"/>
     <link rel="self" href="https://kernel2022.github.io/atom.xml"/>
@@ -10,6 +10,136 @@
     <logo>https://kernel2022.github.io/images/avatar.png</logo>
     <icon>https://kernel2022.github.io/favicon.ico</icon>
     <rights>All rights reserved 2022, 贾献华 2022</rights>
+    <entry>
+        <title type="html"><![CDATA[Tableau Day5：空间分析]]></title>
+        <id>https://kernel2022.github.io/post/tableau-day-5/</id>
+        <link href="https://kernel2022.github.io/post/tableau-day-5/">
+        </link>
+        <updated>2022-01-10T14:23:33.000Z</updated>
+        <summary type="html"><![CDATA[<p>▶ Day5 课程内容<br>
+学习如何在 Tableau 中创建自定义背景地图与连线地图，增强空间分析。</p>
+]]></summary>
+        <content type="html"><![CDATA[<p>▶ Day5 课程内容<br>
+学习如何在 Tableau 中创建自定义背景地图与连线地图，增强空间分析。</p>
+<!-- more -->
+<p>▶ Day5 练习数据（复制链接至浏览器获取）<br>
+<a href="https://pan.baidu.com/s/1rhChM7ol5fZ9e0yNXPv7_g">https://pan.baidu.com/s/1rhChM7ol5fZ9e0yNXPv7_g</a><br>
+提取码：m3ad</p>
+<h2 id="自定义背景地图">自定义背景地图</h2>
+<ol>
+<li>到文件
+<ul>
+<li>Microsoft Excel</li>
+</ul>
+</li>
+<li>打开 <strong>投篮数据.xlsx</strong></li>
+<li>双击左下角 <strong>工作表1</strong>
+<ul>
+<li>重命名为 <strong>自定义背景地图</strong></li>
+</ul>
+</li>
+<li>按住右键（Option）拖拽 <strong>X</strong> 到 <em>行</em>
+<ol>
+<li>放置字段：<em>X</em></li>
+</ol>
+</li>
+<li>按住右键（Option）拖拽 <strong>Y</strong> 到 <em>列</em>
+<ol>
+<li>放置字段：<em>Y</em></li>
+</ol>
+</li>
+<li>工具栏：<strong>标准</strong> -&gt; <em>整个视图</em></li>
+<li>菜单栏
+<ol>
+<li>地图
+<ol>
+<li>背景图像
+<ol>
+<li>投篮数据（投篮数据）
+<ol>
+<li>添加图像
+<ol>
+<li>左：40</li>
+<li>右：830</li>
+<li>下：-250</li>
+<li>上：250</li>
+</ol>
+</li>
+</ol>
+</li>
+</ol>
+</li>
+</ol>
+</li>
+</ol>
+</li>
+</ol>
+<p><img src="https://kernel2022.github.io/post-images/1641826390192.png" alt="背景图像" loading="lazy"><br>
+8. 拖拽 <strong>Shot Gold</strong> 到 <em>标记/颜色</em><br>
+9.  <strong>标记</strong>： <em>自动</em> 到 <em>圆</em><br>
+<img src="https://kernel2022.github.io/post-images/1641828192301.png" alt="自定义背景地图" loading="lazy"></p>
+<h2 id="连线地图">连线地图</h2>
+<ol>
+<li>点击左下角 <strong>新建工作表</strong>
+<ul>
+<li>重命名为 <strong>连线地图</strong></li>
+</ul>
+</li>
+<li>工具栏：<strong>新建数据源</strong></li>
+<li>到文件
+<ul>
+<li>Microsoft Excel</li>
+</ul>
+</li>
+<li>打开 <strong>经纬度.xlsx</strong></li>
+</ol>
+<h3 id="创建计算字段-3-种方法">创建计算字段 3 种方法</h3>
+<ol>
+<li>菜单栏
+<ol>
+<li>分析
+<ol>
+<li>创建计算字段</li>
+</ol>
+</li>
+</ol>
+</li>
+<li>右击：表
+<ol>
+<li>创建计算字段</li>
+</ol>
+</li>
+<li>下拉：搜索矿右侧（最常用）
+<ol>
+<li>创建计算字段<br>
+这里使用第 3 种方式<br>
+<code>起点</code></li>
+</ol>
+</li>
+</ol>
+<pre><code class="language-bash">MAKEPOINT([起始点纬度], [起始点经度])
+</code></pre>
+<p><code>终点</code></p>
+<pre><code class="language-bash">MAKEPOINT([结束点纬度], [结束点经度])
+</code></pre>
+<h3 id="创建线">创建线</h3>
+<ol>
+<li>下拉：
+<ol>
+<li>创建计算字段<br>
+<code>线</code></li>
+</ol>
+</li>
+</ol>
+<pre><code class="language-bash">MAKELINE([起点], [终点])
+</code></pre>
+<h3 id="画线">画线</h3>
+<p>拖拽 <strong>线</strong> 到 <em>标记/详细信息</em><br>
+<img src="https://kernel2022.github.io/post-images/1641828199992.png" alt="画线" loading="lazy"></p>
+<h2 id="随堂测验">随堂测验</h2>
+<figure data-type="image" tabindex="1"><img src="https://kernel2022.github.io/post-images/1641828817928.png" alt="随堂测验" loading="lazy"></figure>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[ 《说透芯片》学习笔记]]></title>
         <id>https://kernel2022.github.io/post/chip/</id>
@@ -342,6 +472,8 @@ RISC-V 架构秉承简单的设计哲学，完全抛弃历史包袱，从轻上�
 <li>其次，产业发展需要领域专用架构 DSA（Domain Specific Architecture）的硬件。</li>
 <li>最后一个优势，中美之争给了所有“非美技术”一个机会。</li>
 </ol>
+<h2 id="参考">参考</h2>
+<p><a href="https://time.geekbang.org/column/intro/100079201">说透芯片-邵巍</a></p>
 ]]></content>
     </entry>
     <entry>
