@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://kernel2022.github.io</id>
     <title>贾献华 2022</title>
-    <updated>2022-01-12T15:03:30.039Z</updated>
+    <updated>2022-01-13T17:43:29.300Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://kernel2022.github.io"/>
     <link rel="self" href="https://kernel2022.github.io/atom.xml"/>
@@ -10,6 +10,182 @@
     <logo>https://kernel2022.github.io/images/avatar.png</logo>
     <icon>https://kernel2022.github.io/favicon.ico</icon>
     <rights>All rights reserved 2022, 贾献华 2022</rights>
+    <entry>
+        <title type="html"><![CDATA[Tableau Day8：使用操作增强互动]]></title>
+        <id>https://kernel2022.github.io/post/tableau-day-8/</id>
+        <link href="https://kernel2022.github.io/post/tableau-day-8/">
+        </link>
+        <updated>2022-01-13T14:24:47.000Z</updated>
+        <summary type="html"><![CDATA[<p>▶ Day8 课程内容<br>
+学习使用集操作、参数操作等功能，创建互动仪表板，更快地发现关键见解。</p>
+]]></summary>
+        <content type="html"><![CDATA[<p>▶ Day8 课程内容<br>
+学习使用集操作、参数操作等功能，创建互动仪表板，更快地发现关键见解。</p>
+<!-- more -->
+<p>▶ Day8 练习数据（拷贝链接至浏览器打开）<br>
+<a href="https://pan.baidu.com/s/1j5kwkIPE4k2ZH02BR4kRjA">https://pan.baidu.com/s/1j5kwkIPE4k2ZH02BR4kRjA</a><br>
+提取码：hun0</p>
+<h2 id="布局与筛选">布局与筛选</h2>
+<ol>
+<li>打开：<strong>L8-起始工作簿.twbx</strong></li>
+<li>选中：<strong>基础仪表板1-布局与筛选</strong> 工作表</li>
+<li>拖拽 <strong>产品类别销售趋势</strong> 到 <em>中间</em></li>
+<li>拖拽 <strong>退货情况</strong> 到 <em>下方</em></li>
+<li>移除右侧：<strong>类别</strong></li>
+<li>移除右侧：<strong>类别，退回1</strong></li>
+<li>将 <strong>订单日期</strong> 移动上方</li>
+<li>将 <strong>区域</strong> 移动上方</li>
+<li>选中 <strong>上方容器</strong>
+<ol>
+<li>均匀分布内容<br>
+<img src="https://kernel2022.github.io/post-images/1642084844729.png" alt="均匀分布内容" loading="lazy"></li>
+</ol>
+</li>
+</ol>
+<h3 id="数据联动">数据联动</h3>
+<ol>
+<li>用作筛选器： <strong>产品类别销售趋势</strong> 右上角</li>
+<li>选中  <strong>产品类别销售趋势</strong> 类别，下方 <strong>退货情况</strong>  会相应选中<br>
+<img src="https://kernel2022.github.io/post-images/1642085290568.png" alt="数据联动" loading="lazy"></li>
+</ol>
+<h2 id="仪表板-排除所有值">仪表板 排除所有值</h2>
+<ol>
+<li>菜单栏</li>
+<li>仪表板</li>
+<li>操作</li>
+<li>选中：<strong>筛选器1（已生成）</strong></li>
+<li>编辑</li>
+<li>清除选定内容将会</li>
+<li>排除所有值<br>
+<img src="https://kernel2022.github.io/post-images/1642085684858.png" alt="排除所有值" loading="lazy"></li>
+<li>第 1 次 选中 <strong>类别</strong>
+<ol>
+<li>下表联动</li>
+</ol>
+</li>
+<li>第 2 次 选中 <strong>类别</strong>
+<ol>
+<li>下表 <strong>退货情况</strong> 内容隐藏</li>
+</ol>
+</li>
+</ol>
+<h3 id="隐藏-退货情况-工作表">隐藏 退货情况 工作表</h3>
+<ol>
+<li>拖拽 <strong>对象/垂直</strong> 到中间</li>
+<li>拖拽 <strong>产品类别销售趋势</strong> 到 <strong>对象/垂直</strong> <em>中间</em></li>
+<li>拖拽 <strong>退货情况</strong> 到 <strong>产品类别销售趋势</strong> <em>下方</em><br>
+<img src="https://kernel2022.github.io/post-images/1642086368079.png" alt="" loading="lazy"></li>
+</ol>
+<h3 id="转到-url">转到 URL</h3>
+<ol>
+<li>菜单栏</li>
+<li>仪表板</li>
+<li>操作</li>
+<li>添加动作</li>
+<li>转到 URL
+<ol>
+<li>名称：<strong>请点击链接查询</strong></li>
+<li>运行操作方式：<strong>菜单</strong></li>
+<li>URL：<a href="https://2022.iosdevlog.com">https://2022.iosdevlog.com</a><br>
+<img src="https://kernel2022.github.io/post-images/1642087008666.png" alt="" loading="lazy"><br>
+选中 <strong>产品类别销售趋势</strong> 中的 <em>类别</em>，将鼠标悬浮，出现 <strong>请点击链接查询</strong> 操作。<br>
+点击后会跳转到网址：<a href="https://2022.iosdevlog.com">https://2022.iosdevlog.com</a><br>
+<img src="https://kernel2022.github.io/post-images/1642087035346.png" alt="" loading="lazy"></li>
+</ol>
+</li>
+</ol>
+<h2 id="下钻与筛选">下钻与筛选</h2>
+<ol>
+<li>选中：<strong>基础仪表板2-下钻与筛选</strong></li>
+<li>双击：<strong>TOP10 大客户</strong><br>
+<img src="https://kernel2022.github.io/post-images/1642088137821.png" alt="" loading="lazy"><br>
+点击 <strong>刘明</strong> 下钻<br>
+<img src="https://kernel2022.github.io/post-images/1642088163789.png" alt="下钻" loading="lazy"></li>
+</ol>
+<h3 id="添加下钻操作">添加下钻操作</h3>
+<ol>
+<li>菜单栏</li>
+<li>仪表板</li>
+<li>操作</li>
+<li>移除：<strong>筛选1...下钻</strong></li>
+<li>添加动作</li>
+<li>转到工作表
+<ol>
+<li>名称：<strong>转到大客户明细</strong></li>
+<li>目标信息：<strong>大客户明细信息</strong></li>
+<li>运行操作方式：<strong>选择</strong><br>
+<img src="https://kernel2022.github.io/post-images/1642090131715.png" alt="" loading="lazy"><br>
+会看到所有信息<br>
+<img src="https://kernel2022.github.io/post-images/1642090143545.png" alt="所有信息" loading="lazy"></li>
+</ol>
+</li>
+</ol>
+<h3 id="添加筛选器">添加筛选器</h3>
+<ol>
+<li>菜单栏</li>
+<li>仪表板</li>
+<li>操作</li>
+<li>添加动作</li>
+<li>添加筛选器
+<ol>
+<li>名称：<strong>筛选大客户明细信息</strong></li>
+<li>目标工作表：<strong>大客户明细信息</strong></li>
+<li>运行操作方式：<strong>选择</strong></li>
+<li>清除选定内容将会：<strong>显示所有值</strong><br>
+<img src="https://kernel2022.github.io/post-images/1642090253018.png" alt="筛选" loading="lazy"><br>
+查看选中客户的信息。<br>
+<img src="https://kernel2022.github.io/post-images/1642090226529.png" alt="查看选中的信息" loading="lazy"><br>
+移除 <strong>转到大客户明细</strong> 之后，还是保留 <strong>筛选大客户明细信息</strong> 功能。</li>
+</ol>
+</li>
+</ol>
+<h3 id="back">BACK</h3>
+<ol>
+<li>选中左下角浮动。</li>
+<li>拖拽 <strong>工作表：BACK</strong>  到右上角</li>
+<li>删除图例</li>
+<li>右击：<strong>隐藏标题</strong></li>
+<li>调整大小</li>
+<li>菜单栏</li>
+<li>仪表板</li>
+<li>操作</li>
+<li>添加动作</li>
+<li>转到工作表
+<ol>
+<li>名称：<strong>转到基础仪表板1-布局与筛选</strong></li>
+<li>源工作表：<strong>BACK</strong></li>
+<li>目标工作表：<strong>基础仪表板1-布局与筛选</strong><br>
+<img src="https://kernel2022.github.io/post-images/1642091435369.png" alt="" loading="lazy"><br>
+BACK 转到 <strong>基础仪表板1-布局与筛选</strong><br>
+<img src="https://kernel2022.github.io/post-images/1642091458369.png" alt="" loading="lazy"></li>
+</ol>
+</li>
+</ol>
+<h2 id="更换参数">更换参数</h2>
+<ol>
+<li>基础仪表板3-更改参数</li>
+<li>平铺</li>
+<li>拖拽 <strong>总览</strong> 到 <em>中间</em></li>
+<li>拖拽 <strong>动态度量</strong> 到 <strong>总览</strong> <em>下方</em></li>
+<li>调整视图：<strong>动态度量</strong> 高 &gt; <strong>总览</strong> 高</li>
+<li>菜单栏</li>
+<li>仪表板</li>
+<li>操作</li>
+<li>添加动作</li>
+<li>更改参数
+<ol>
+<li>名称：<strong>更改参数</strong></li>
+<li>源工作表：<strong>总览</strong></li>
+<li>参数：<strong>选择度量</strong></li>
+<li>源字段：<strong>度量名称</strong><br>
+<img src="https://kernel2022.github.io/post-images/1642095547087.png" alt="" loading="lazy"><br>
+选择上方 <strong>总览</strong>，下方<strong>动态度量</strong> 跟着变化。<br>
+<img src="https://kernel2022.github.io/post-images/1642095672877.png" alt="更换参数" loading="lazy"></li>
+</ol>
+</li>
+</ol>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[Tableau Day7：高阶分析视图]]></title>
         <id>https://kernel2022.github.io/post/tableau-day-7/</id>
@@ -1622,91 +1798,6 @@ unsized/ virtual/ yield / try
 <ul>
 <li><a href="https://time.geekbang.org/course/intro/100060601?tab=catalog">极客时间-张汉东的 Rust 实战课</a></li>
 <li><a href="https://github.com/ZhangHanDong/inviting-rust">课件及 Demo 下载链接</a></li>
-</ul>
-]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Rust 入门 快速配置 Rust 开发环境并编写一个小应用！]]></title>
-        <id>https://kernel2022.github.io/post/hello-2022/</id>
-        <link href="https://kernel2022.github.io/post/hello-2022/">
-        </link>
-        <updated>2022-01-02T14:00:24.000Z</updated>
-        <summary type="html"><![CDATA[<h2 id="安装-rust">安装 Rust</h2>
-<p>您可以在 Rust 演练场上在线试用 Rust 而无需在计算机上安装任何东西。<br>
-<a href="https://play.rust-lang.org">无需安装，直接尝试 RUST</a></p>
-]]></summary>
-        <content type="html"><![CDATA[<h2 id="安装-rust">安装 Rust</h2>
-<p>您可以在 Rust 演练场上在线试用 Rust 而无需在计算机上安装任何东西。<br>
-<a href="https://play.rust-lang.org">无需安装，直接尝试 RUST</a></p>
-<!-- more -->
-<h3 id="rustuprust安装器和版本管理工具">Rustup：Rust安装器和版本管理工具</h3>
-<pre><code class="language-rust">curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
-source &quot;$HOME/.cargo/env&quot;
-</code></pre>
-<h2 id="cargorust-的构建工具和包管理器">Cargo：Rust 的构建工具和包管理器</h2>
-<p>您在安装 Rustup 时，也会安装 Rust 构建工具和包管理器的最新稳定版，即 Cargo。Cargo 可以做很多事情：</p>
-<ul>
-<li>cargo build 可以构建项目</li>
-<li>cargo run 可以运行项目</li>
-<li>cargo test 可以测试项目</li>
-<li>cargo doc 可以为项目构建文档</li>
-<li>cargo publish 可以将库发布到 crates.io。<br>
-要检查您是否安装了 Rust 和 Cargo，可以在终端中运行：<br>
-<code>cargo --version</code></li>
-</ul>
-<h2 id="创建新项目">创建新项目</h2>
-<p>我们将在新的 Rust 开发环境中编写一个小应用。首先用 Cargo 创建一个新项目。在您的终端中执行：<br>
-<code>cargo new hello-2022</code><br>
-这会生成一个名为 hello-rust 的新目录，其中包含以下文件：</p>
-<pre><code class="language-shell">hello-rust
-|- Cargo.toml
-|- src
-  |- main.rs
-</code></pre>
-<p>Cargo.toml 为 Rust 的清单文件。其中包含了项目的元数据和依赖库。<br>
-src/main.rs 为编写应用代码的地方。</p>
-<pre><code class="language-rust">fn main() {
-    println!(&quot;Hello, 2022!&quot;);
-}
-</code></pre>
-<p>cargo new 会生成一个新的“Hello, 2022!”项目！我们可以进入新创建的目录中，执行下面的命令来运行此程序：</p>
-<pre><code class="language-shell">println!(&quot;Hello, 2022!&quot;);
-</code></pre>
-<figure data-type="image" tabindex="1"><img src="https://kernel2022.github.io/post-images/1641133058333.png" alt="" loading="lazy"></figure>
-<h2 id="添加依赖">添加依赖</h2>
-<p><code>Cargo.toml</code></p>
-<pre><code class="language-xml">[dependencies]
-ferris-says = &quot;0.2&quot;
-</code></pre>
-<p>接着运行：<br>
-<code>cargo build</code><br>
-…之后 Cargo 就会安装该依赖。</p>
-<h2 id="一个-rust-小应用">一个 Rust 小应用</h2>
-<p><code>main.rs</code></p>
-<pre><code class="language-rust">use ferris_says::say; // from the previous step
-use std::io::{stdout, BufWriter};
-
-fn main() {
-    let stdout = stdout();
-    let message = String::from(&quot;Hello, 2022!&quot;);
-    let width = message.chars().count();
-
-    let mut writer = BufWriter::new(stdout.lock());
-    say(message.as_bytes(), width, &amp;mut writer).unwrap();
-}
-</code></pre>
-<p>保存完毕后，我们可以输入以下命令来运行此应用：<br>
-<code>cargo run</code><br>
-如果一切正确，您会看到该应用将以下内容打印到了屏幕上：<br>
-<img src="https://kernel2022.github.io/post-images/1641134456649.png" alt="" loading="lazy"></p>
-<h2 id="这只螃蟹是谁-ferris">这只螃蟹是谁？ Ferris ？</h2>
-<p>Ferris 是 Rust 社区的非官方吉祥物。很多 Rust 程序员自称“Rustaceans”， 它与“crustacean”相似。 我们用“they”、“them”等代词，而不用带性别的代词来指代 Ferris。</p>
-<p>Ferris 与形容词“ferrous”相似，它的含义与铁有关。由于 Rust（锈）通常由铁形成， 因此它算得上是个吉祥物名字的有趣来源。<br>
-<img src="https://kernel2022.github.io/post-images/1641133269085.gif" alt="" loading="lazy"><br>
-您可以在 http://rustacean.net/ 上找到更多 Ferris 的图片。</p>
-<h2 id="参考">参考</h2>
-<ul>
-<li><a href="https://www.rust-lang.org/zh-CN/learn/get-started">Rust 马上开始</a></li>
 </ul>
 ]]></content>
     </entry>
