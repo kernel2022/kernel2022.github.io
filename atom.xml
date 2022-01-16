@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://kernel2022.github.io</id>
     <title>贾献华 2022</title>
-    <updated>2022-01-13T17:43:29.300Z</updated>
+    <updated>2022-01-16T22:41:24.664Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://kernel2022.github.io"/>
     <link rel="self" href="https://kernel2022.github.io/atom.xml"/>
@@ -10,6 +10,238 @@
     <logo>https://kernel2022.github.io/images/avatar.png</logo>
     <icon>https://kernel2022.github.io/favicon.ico</icon>
     <rights>All rights reserved 2022, 贾献华 2022</rights>
+    <entry>
+        <title type="html"><![CDATA[Tableau Day9：美化仪表板和构建故事]]></title>
+        <id>https://kernel2022.github.io/post/tableau-day-9/</id>
+        <link href="https://kernel2022.github.io/post/tableau-day-9/">
+        </link>
+        <updated>2022-01-16T11:06:19.000Z</updated>
+        <summary type="html"><![CDATA[<p>▶ Day9 课程内容<br>
+了解仪表板优化及合理选择图表的方法，学会用数据讲故事。</p>
+]]></summary>
+        <content type="html"><![CDATA[<p>▶ Day9 课程内容<br>
+了解仪表板优化及合理选择图表的方法，学会用数据讲故事。</p>
+<!-- more -->
+<h2 id="创建工作表">创建工作表</h2>
+<h3 id="销售分析">销售分析</h3>
+<ol>
+<li>创建参数: <strong>度量切换</strong><br>
+<img src="https://kernel2022.github.io/post-images/1642334279822.png" alt="度量切换" loading="lazy"></li>
+<li>创建计算字段：<strong>度量选择</strong></li>
+</ol>
+<pre><code>IF [度量切换] == &quot;利润&quot; THEN [利润]
+ELSEIF [度量切换] == &quot;销售额&quot; THEN [销售额]
+ELSEIF [度量切换] = &quot;数量&quot; THEN [数量]
+END
+</code></pre>
+<ol>
+<li>列： <strong>子类别</strong></li>
+<li>行：<strong>度量选择</strong><br>
+<img src="https://kernel2022.github.io/post-images/1642334438490.png" alt="度量选择" loading="lazy"></li>
+</ol>
+<h3 id="地图分析">地图分析</h3>
+<ol>
+<li>国家/地区
+<ol>
+<li>地理角色
+<ol>
+<li>国家/地区</li>
+</ol>
+</li>
+</ol>
+</li>
+<li>省/自治区
+<ol>
+<li>地理角色
+<ol>
+<li>州/省/市/自治区<br>
+<img src="https://kernel2022.github.io/post-images/1642334971931.png" alt="国家/地区" loading="lazy"></li>
+</ol>
+</li>
+</ol>
+</li>
+<li>列：经度（自动生成）</li>
+<li>行：纬度（自动生成）</li>
+<li>标记
+<ol>
+<li>颜色
+<ol>
+<li>销售额</li>
+</ol>
+</li>
+<li>详细信息：
+<ol>
+<li>国家</li>
+<li>地区<br>
+<img src="https://kernel2022.github.io/post-images/1642335164532.png" alt="省/自治区" loading="lazy"></li>
+</ol>
+</li>
+</ol>
+</li>
+</ol>
+<h3 id="时间趋势分析">时间趋势分析</h3>
+<ol>
+<li>列：月（订单日期）</li>
+<li>行：
+<ol>
+<li>销售额（条形图）</li>
+<li>销售额（线）
+<ol>
+<li>快速表计算
+<ol>
+<li>百分比差异</li>
+</ol>
+</li>
+</ol>
+</li>
+</ol>
+</li>
+<li>标记/颜色
+<ol>
+<li>度量名称
+<ol>
+<li>编辑别名<br>
+<img src="https://kernel2022.github.io/post-images/1642338610662.png" alt="" loading="lazy"></li>
+</ol>
+</li>
+</ol>
+</li>
+</ol>
+<h3 id="指标展示">指标展示</h3>
+<ol>
+<li>双击：度量名称</li>
+<li>格式：中部 居中</li>
+<li>编辑筛选器<br>
+<img src="https://kernel2022.github.io/post-images/1642340554207.png" alt="指标展示" loading="lazy"></li>
+</ol>
+<h3 id="客户生命周期">客户生命周期</h3>
+<ol>
+<li>行：订单日期</li>
+<li>标记：
+<ol>
+<li>颜色：销售额</li>
+<li>大小：销售额</li>
+<li>标签：客户名称<br>
+<img src="https://kernel2022.github.io/post-images/1642340913730.png" alt="客户生命周期" loading="lazy"></li>
+</ol>
+</li>
+</ol>
+<h3 id="大客户分析">大客户分析</h3>
+<ol>
+<li>右击：<strong>客户名称</strong>
+<ol>
+<li>创建
+<ol>
+<li>集
+<ol>
+<li>名称：<strong>高利润</strong></li>
+<li>顶部
+<ol>
+<li>按字段
+<ol>
+<li><strong>顶部</strong></li>
+<li><strong>总和</strong></li>
+<li><strong>利润</strong></li>
+<li><strong>总和</strong><br>
+<img src="https://kernel2022.github.io/post-images/1642344117262.png" alt="" loading="lazy"><br>
+高频率类似。<br>
+<img src="https://kernel2022.github.io/post-images/1642344074512.png" alt="" loading="lazy"></li>
+</ol>
+</li>
+</ol>
+</li>
+</ol>
+</li>
+</ol>
+</li>
+</ol>
+</li>
+</ol>
+<h2 id="仪表板">仪表板</h2>
+<h3 id="新建仪表板">新建仪表板</h3>
+<ol>
+<li>名称：<strong>产品分析</strong></li>
+<li>拖拽：地图分析（中间）</li>
+<li>拖拽：销售分析（下方）</li>
+<li>拖拽：时间趋势分析（下方）</li>
+<li>拖拽：指标展示（上方）</li>
+</ol>
+<h2 id="美观">美观</h2>
+<h3 id="指标展示-2">指标展示</h3>
+<ol>
+<li>隐藏标题</li>
+<li>高度调整</li>
+<li>转到工作表
+<ol>
+<li>编辑标签<br>
+<img src="https://kernel2022.github.io/post-images/1642345129202.png" alt="" loading="lazy"></li>
+</ol>
+</li>
+</ol>
+<h3 id="所有子表边界">所有子表边界</h3>
+<ol>
+<li>布局
+<ol>
+<li>边界
+<ol>
+<li>实线</li>
+<li>颜色<br>
+<img src="https://kernel2022.github.io/post-images/1642345180308.png" alt="" loading="lazy"></li>
+</ol>
+</li>
+</ol>
+</li>
+</ol>
+<h3 id="操作">操作</h3>
+<ol>
+<li>菜单栏</li>
+<li>仪表板</li>
+<li>操作</li>
+<li>添加动作</li>
+<li>筛选器
+<ol>
+<li>名称：地图筛选器</li>
+<li>源工作表：地图分析</li>
+<li>运行操作方式：选择</li>
+<li>目标工作表：<strong>取消</strong> 地图分析<br>
+<img src="https://kernel2022.github.io/post-images/1642345905621.png" alt="" loading="lazy"></li>
+</ol>
+</li>
+</ol>
+<h3 id="操作说明">操作说明</h3>
+<p>双击 <strong>地图分析</strong> 标题<br>
+<img src="https://kernel2022.github.io/post-images/1642346269835.png" alt="" loading="lazy"></p>
+<h2 id="客户分析">客户分析</h2>
+<h3 id="新建仪表板-2">新建仪表板</h3>
+<ol>
+<li>名称：<strong>客户分析</strong></li>
+<li>拖拽：客户生命周期（中间）</li>
+<li>拖拽：大客户分析（下方）<br>
+<img src="https://kernel2022.github.io/post-images/1642346555005.png" alt="" loading="lazy"></li>
+</ol>
+<h2 id="故事">故事</h2>
+<h3 id="新建故事">新建故事</h3>
+<ol>
+<li>名称：<strong>用户故事</strong></li>
+<li>拖拽：<strong>产品分析</strong>
+<ol>
+<li>添加说明：产品分析</li>
+</ol>
+</li>
+<li>新建故事点：空白</li>
+<li>拖拽：<strong>客户分析</strong>
+<ol>
+<li>添加说明：客户分析<br>
+<img src="https://kernel2022.github.io/post-images/1642346838732.png" alt="新建故事" loading="lazy"></li>
+</ol>
+</li>
+</ol>
+<h3 id="演示">演示</h3>
+<figure data-type="image" tabindex="1"><img src="https://kernel2022.github.io/post-images/1642346788663.png" alt="演示" loading="lazy"></figure>
+<h2 id="随堂测验">随堂测验</h2>
+<figure data-type="image" tabindex="2"><img src="https://kernel2022.github.io/post-images/1642347354722.png" alt="随堂测验" loading="lazy"></figure>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[Tableau Day8：使用操作增强互动]]></title>
         <id>https://kernel2022.github.io/post/tableau-day-8/</id>
@@ -184,6 +416,8 @@ BACK 转到 <strong>基础仪表板1-布局与筛选</strong><br>
 </ol>
 </li>
 </ol>
+<h2 id="随堂测验">随堂测验</h2>
+<figure data-type="image" tabindex="1"><img src="https://kernel2022.github.io/post-images/1642347556066.png" alt="随堂测验" loading="lazy"></figure>
 ]]></content>
     </entry>
     <entry>
@@ -227,7 +461,7 @@ BACK 转到 <strong>基础仪表板1-布局与筛选</strong><br>
 <ol>
 <li>名称：<strong>-利润</strong></li>
 </ol>
-<pre><code>-[利润]
+<pre><code class="language-bash">-[利润]
 </code></pre>
 </li>
 <li>拖拽 <strong>-利润</strong> 到 <em>标记/大小</em></li>
@@ -380,7 +614,7 @@ BACK 转到 <strong>基础仪表板1-布局与筛选</strong><br>
 </ol>
 </li>
 </ol>
-<pre><code>RUNNING_SUM(SUM([销售额]))
+<pre><code class="language-bash">RUNNING_SUM(SUM([销售额]))
 </code></pre>
 <h3 id="同比">同比</h3>
 <ol>
@@ -396,7 +630,7 @@ BACK 转到 <strong>基础仪表板1-布局与筛选</strong><br>
 </ol>
 </li>
 </ol>
-<pre><code>(ZN(SUM([销售额])) - LOOKUP(ZN(SUM([销售额])), -1)) / ABS(LOOKUP(ZN(SUM([销售额])), -1))
+<pre><code class="language-bash">(ZN(SUM([销售额])) - LOOKUP(ZN(SUM([销售额])), -1)) / ABS(LOOKUP(ZN(SUM([销售额])), -1))
 </code></pre>
 <h3 id="环比">环比</h3>
 <ol>
@@ -412,7 +646,7 @@ BACK 转到 <strong>基础仪表板1-布局与筛选</strong><br>
 </ol>
 </li>
 </ol>
-<pre><code>(ZN(SUM([销售额])) - LOOKUP(ZN(SUM([销售额])), -1)) / ABS(LOOKUP(ZN(SUM([销售额])), -1))
+<pre><code class="language-bash">(ZN(SUM([销售额])) - LOOKUP(ZN(SUM([销售额])), -1)) / ABS(LOOKUP(ZN(SUM([销售额])), -1))
 </code></pre>
 <h3 id="重命名轴标题">重命名轴标题</h3>
 <ol>
@@ -1701,104 +1935,6 @@ END
 </ol>
 <h2 id="随堂测验">随堂测验</h2>
 <figure data-type="image" tabindex="2"><img src="https://kernel2022.github.io/post-images/1641309372405.png" alt="" loading="lazy"></figure>
-]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[《张汉东的 Rust 实战课》学习笔记]]></title>
-        <id>https://kernel2022.github.io/post/rust-video/</id>
-        <link href="https://kernel2022.github.io/post/rust-video/">
-        </link>
-        <updated>2022-01-03T09:39:21.000Z</updated>
-        <summary type="html"><![CDATA[<h2 id="学习方法">学习方法</h2>
-<ol>
-<li>从整体出发，不要陷入细节</li>
-<li>分层次学习</li>
-<li>和已知知识建立联系</li>
-<li>源码中学习</li>
-<li>主题式阅读</li>
-<li>Rust 设计哲学</li>
-<li>心智模型</li>
-<li>多分享，多提问，多交流</li>
-<li>开源项目贡献</li>
-<li>《Rust 编程之道》</li>
-</ol>
-]]></summary>
-        <content type="html"><![CDATA[<h2 id="学习方法">学习方法</h2>
-<ol>
-<li>从整体出发，不要陷入细节</li>
-<li>分层次学习</li>
-<li>和已知知识建立联系</li>
-<li>源码中学习</li>
-<li>主题式阅读</li>
-<li>Rust 设计哲学</li>
-<li>心智模型</li>
-<li>多分享，多提问，多交流</li>
-<li>开源项目贡献</li>
-<li>《Rust 编程之道》</li>
-</ol>
-<!-- more -->
-<h3 id="2020年5月15日-rust-稳定版发布-五周年">2020年5月15日 Rust 稳定版发布 五周年</h3>
-<p>• 内存安全为第一准则<br>
-• 注重并发安全，避免数据竞争<br>
-• 持续提升性能<br>
-• 保持语言的高度一致性<br>
-• 语言必须有可见的实用性<br>
-• 注重开发体验和学习体验<br>
-• 现代化语言特性<br>
-• 拥抱开源社区</p>
-<h3 id="rust-是新时代的-c-语言">Rust 是新时代的 C 语言</h3>
-<p>• Rust 语言是一门通用型语言。<br>
-• Rust 语言的内存安全方案针对的是 C 语言的不足。<br>
-• 安全且无缝沟通 C 语言。<br>
-• Rust 是具有混合范式的“面向过程”式的编程语言。<br>
-• 和 C 语言类似，担负了时代的使命。<br>
-<img src="https://kernel2022.github.io/post-images/1641204761152.png" alt="" loading="lazy"></p>
-<h3 id="rust-词法结构">Rust 词法结构</h3>
-<p>包含六大部分：<br>
-• 关键字（Keywords）<br>
-• 标识符（Identifier）<br>
-• 注释 （Comment）<br>
-• 空白（Whitespace）<br>
-• 词条（Tokens）<br>
-• 路径（Path）<br>
-关键字：<br>
-• 严格关键字（Strict）</p>
-<pre><code class="language-rust">as/ break/ const/ continue/ crate/ if/ else/ struct/ enum/ true/ false/ fn/
-for/ in/ let/ loop/ impl/ mod/ match/ move / mut /pub/ ref/ return/ self/
-Self/ static/ super/ trait/ type/ unsafe/ use/ where/ while /async/ await/
-dyn / main
-</code></pre>
-<p>• 保留字（Reserved）</p>
-<pre><code class="language-rust">abstract/ become/ box/ do/ final/ macro/ override/ priv/ typeof/
-unsized/ virtual/ yield / try
-</code></pre>
-<p>• 弱关键字（Weak）</p>
-<ol>
-<li>2018 Edition: union, static</li>
-<li>2015 Edition: dyn</li>
-</ol>
-<h3 id="词条">词条</h3>
-<ol>
-<li>语言项 （item）</li>
-<li>块（block）</li>
-<li>语句（Stmt）</li>
-<li>表达式 （Expr）</li>
-<li>模式 （Pattern）</li>
-<li>关键字 （Keyword）</li>
-<li>标识符 （Ident）</li>
-<li>字面量 （Literal）</li>
-<li>生命周期 （Lifetime）</li>
-<li>可见性 （Vis）</li>
-<li>标点符号（Punctuation）</li>
-<li>分隔符（delimiter）</li>
-<li>词条树（Token Tree）</li>
-<li>属性（Attribute）</li>
-</ol>
-<h2 id="参考">参考</h2>
-<ul>
-<li><a href="https://time.geekbang.org/course/intro/100060601?tab=catalog">极客时间-张汉东的 Rust 实战课</a></li>
-<li><a href="https://github.com/ZhangHanDong/inviting-rust">课件及 Demo 下载链接</a></li>
-</ul>
 ]]></content>
     </entry>
 </feed>

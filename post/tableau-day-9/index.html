@@ -1,0 +1,384 @@
+
+<!DOCTYPE html>
+<html>
+  <head>
+    
+<meta charset="utf-8" >
+
+<title>Tableau Day9：美化仪表板和构建故事 | 贾献华 2022</title>
+<meta name="description" content="及时当勉励，岁月不待人。">
+
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css">
+
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+<link rel="shortcut icon" href="https://kernel2022.github.io/favicon.ico?v=1642372876484">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
+<link rel="stylesheet" href="https://kernel2022.github.io/styles/main.css">
+
+
+
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<script src="https://cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
+
+
+
+  </head>
+  <body>
+    <div id="app" class="main">
+      <div class="site-header-container">
+  <div class="site-header">
+    <div class="left">
+      <a href="https://kernel2022.github.io">
+        <img class="avatar" src="https://kernel2022.github.io/images/avatar.png?v=1642372876484" alt="" width="32px" height="32px">
+      </a>
+      <a href="https://kernel2022.github.io">
+        <h1 class="site-title">贾献华 2022</h1>
+      </a>
+    </div>
+    <div class="right">
+      <transition name="fade">
+        <i class="icon" :class="{ 'icon-close-outline': menuVisible, 'icon-menu-outline': !menuVisible }" @click="menuVisible = !menuVisible"></i>
+      </transition>
+    </div>
+  </div>
+</div>
+
+<transition name="fade">
+  <div class="menu-container" style="display: none;" v-show="menuVisible">
+    <div class="menu-list">
+      
+        
+          <a href="/" class="menu purple-link">
+            首页
+          </a>
+        
+      
+        
+          <a href="/archives" class="menu purple-link">
+            归档
+          </a>
+        
+      
+        
+          <a href="/tags" class="menu purple-link">
+            标签
+          </a>
+        
+      
+        
+          <a href="/post/about" class="menu purple-link">
+            关于
+          </a>
+        
+      
+    </div>
+  </div>
+</transition>
+
+
+      <div class="content-container">
+        <div class="post-detail">
+          
+            <div class="feature-container" style="background-image: url('https://kernel2022.github.io/post-images/tableau-day-9.png')">
+            </div>
+          
+          <h2 class="post-title">Tableau Day9：美化仪表板和构建故事</h2>
+          <div class="post-info post-detail-info">
+            <span><i class="icon-calendar-outline"></i> 2022-01-16</span>
+            
+              <span>
+                <i class="icon-pricetags-outline"></i>
+                
+                  <a href="https://kernel2022.github.io/tag/pjl7G_sDW/">
+                    Tableau 技能 14 天打卡训练营
+                    
+                      ，
+                    
+                  </a>
+                
+                  <a href="https://kernel2022.github.io/tag/U7EQ8NsLe/">
+                    tableau
+                    
+                  </a>
+                
+              </span>
+            
+          </div>
+          <div class="post-content">
+            <p>▶ Day9 课程内容<br>
+了解仪表板优化及合理选择图表的方法，学会用数据讲故事。</p>
+<!-- more -->
+<h2 id="创建工作表">创建工作表</h2>
+<h3 id="销售分析">销售分析</h3>
+<ol>
+<li>创建参数: <strong>度量切换</strong><br>
+<img src="https://kernel2022.github.io/post-images/1642334279822.png" alt="度量切换" loading="lazy"></li>
+<li>创建计算字段：<strong>度量选择</strong></li>
+</ol>
+<pre><code>IF [度量切换] == &quot;利润&quot; THEN [利润]
+ELSEIF [度量切换] == &quot;销售额&quot; THEN [销售额]
+ELSEIF [度量切换] = &quot;数量&quot; THEN [数量]
+END
+</code></pre>
+<ol>
+<li>列： <strong>子类别</strong></li>
+<li>行：<strong>度量选择</strong><br>
+<img src="https://kernel2022.github.io/post-images/1642334438490.png" alt="度量选择" loading="lazy"></li>
+</ol>
+<h3 id="地图分析">地图分析</h3>
+<ol>
+<li>国家/地区
+<ol>
+<li>地理角色
+<ol>
+<li>国家/地区</li>
+</ol>
+</li>
+</ol>
+</li>
+<li>省/自治区
+<ol>
+<li>地理角色
+<ol>
+<li>州/省/市/自治区<br>
+<img src="https://kernel2022.github.io/post-images/1642334971931.png" alt="国家/地区" loading="lazy"></li>
+</ol>
+</li>
+</ol>
+</li>
+<li>列：经度（自动生成）</li>
+<li>行：纬度（自动生成）</li>
+<li>标记
+<ol>
+<li>颜色
+<ol>
+<li>销售额</li>
+</ol>
+</li>
+<li>详细信息：
+<ol>
+<li>国家</li>
+<li>地区<br>
+<img src="https://kernel2022.github.io/post-images/1642335164532.png" alt="省/自治区" loading="lazy"></li>
+</ol>
+</li>
+</ol>
+</li>
+</ol>
+<h3 id="时间趋势分析">时间趋势分析</h3>
+<ol>
+<li>列：月（订单日期）</li>
+<li>行：
+<ol>
+<li>销售额（条形图）</li>
+<li>销售额（线）
+<ol>
+<li>快速表计算
+<ol>
+<li>百分比差异</li>
+</ol>
+</li>
+</ol>
+</li>
+</ol>
+</li>
+<li>标记/颜色
+<ol>
+<li>度量名称
+<ol>
+<li>编辑别名<br>
+<img src="https://kernel2022.github.io/post-images/1642338610662.png" alt="" loading="lazy"></li>
+</ol>
+</li>
+</ol>
+</li>
+</ol>
+<h3 id="指标展示">指标展示</h3>
+<ol>
+<li>双击：度量名称</li>
+<li>格式：中部 居中</li>
+<li>编辑筛选器<br>
+<img src="https://kernel2022.github.io/post-images/1642340554207.png" alt="指标展示" loading="lazy"></li>
+</ol>
+<h3 id="客户生命周期">客户生命周期</h3>
+<ol>
+<li>行：订单日期</li>
+<li>标记：
+<ol>
+<li>颜色：销售额</li>
+<li>大小：销售额</li>
+<li>标签：客户名称<br>
+<img src="https://kernel2022.github.io/post-images/1642340913730.png" alt="客户生命周期" loading="lazy"></li>
+</ol>
+</li>
+</ol>
+<h3 id="大客户分析">大客户分析</h3>
+<ol>
+<li>右击：<strong>客户名称</strong>
+<ol>
+<li>创建
+<ol>
+<li>集
+<ol>
+<li>名称：<strong>高利润</strong></li>
+<li>顶部
+<ol>
+<li>按字段
+<ol>
+<li><strong>顶部</strong></li>
+<li><strong>总和</strong></li>
+<li><strong>利润</strong></li>
+<li><strong>总和</strong><br>
+<img src="https://kernel2022.github.io/post-images/1642344117262.png" alt="" loading="lazy"><br>
+高频率类似。<br>
+<img src="https://kernel2022.github.io/post-images/1642344074512.png" alt="" loading="lazy"></li>
+</ol>
+</li>
+</ol>
+</li>
+</ol>
+</li>
+</ol>
+</li>
+</ol>
+</li>
+</ol>
+<h2 id="仪表板">仪表板</h2>
+<h3 id="新建仪表板">新建仪表板</h3>
+<ol>
+<li>名称：<strong>产品分析</strong></li>
+<li>拖拽：地图分析（中间）</li>
+<li>拖拽：销售分析（下方）</li>
+<li>拖拽：时间趋势分析（下方）</li>
+<li>拖拽：指标展示（上方）</li>
+</ol>
+<h2 id="美观">美观</h2>
+<h3 id="指标展示-2">指标展示</h3>
+<ol>
+<li>隐藏标题</li>
+<li>高度调整</li>
+<li>转到工作表
+<ol>
+<li>编辑标签<br>
+<img src="https://kernel2022.github.io/post-images/1642345129202.png" alt="" loading="lazy"></li>
+</ol>
+</li>
+</ol>
+<h3 id="所有子表边界">所有子表边界</h3>
+<ol>
+<li>布局
+<ol>
+<li>边界
+<ol>
+<li>实线</li>
+<li>颜色<br>
+<img src="https://kernel2022.github.io/post-images/1642345180308.png" alt="" loading="lazy"></li>
+</ol>
+</li>
+</ol>
+</li>
+</ol>
+<h3 id="操作">操作</h3>
+<ol>
+<li>菜单栏</li>
+<li>仪表板</li>
+<li>操作</li>
+<li>添加动作</li>
+<li>筛选器
+<ol>
+<li>名称：地图筛选器</li>
+<li>源工作表：地图分析</li>
+<li>运行操作方式：选择</li>
+<li>目标工作表：<strong>取消</strong> 地图分析<br>
+<img src="https://kernel2022.github.io/post-images/1642345905621.png" alt="" loading="lazy"></li>
+</ol>
+</li>
+</ol>
+<h3 id="操作说明">操作说明</h3>
+<p>双击 <strong>地图分析</strong> 标题<br>
+<img src="https://kernel2022.github.io/post-images/1642346269835.png" alt="" loading="lazy"></p>
+<h2 id="客户分析">客户分析</h2>
+<h3 id="新建仪表板-2">新建仪表板</h3>
+<ol>
+<li>名称：<strong>客户分析</strong></li>
+<li>拖拽：客户生命周期（中间）</li>
+<li>拖拽：大客户分析（下方）<br>
+<img src="https://kernel2022.github.io/post-images/1642346555005.png" alt="" loading="lazy"></li>
+</ol>
+<h2 id="故事">故事</h2>
+<h3 id="新建故事">新建故事</h3>
+<ol>
+<li>名称：<strong>用户故事</strong></li>
+<li>拖拽：<strong>产品分析</strong>
+<ol>
+<li>添加说明：产品分析</li>
+</ol>
+</li>
+<li>新建故事点：空白</li>
+<li>拖拽：<strong>客户分析</strong>
+<ol>
+<li>添加说明：客户分析<br>
+<img src="https://kernel2022.github.io/post-images/1642346838732.png" alt="新建故事" loading="lazy"></li>
+</ol>
+</li>
+</ol>
+<h3 id="演示">演示</h3>
+<figure data-type="image" tabindex="1"><img src="https://kernel2022.github.io/post-images/1642346788663.png" alt="演示" loading="lazy"></figure>
+<h2 id="随堂测验">随堂测验</h2>
+<figure data-type="image" tabindex="2"><img src="https://kernel2022.github.io/post-images/1642347354722.png" alt="随堂测验" loading="lazy"></figure>
+
+          </div>
+        </div>
+
+        
+          <div class="next-post">
+            <a class="purple-link" href="https://kernel2022.github.io/post/tableau-day-8/">
+              <h3 class="post-title">
+                下一篇：Tableau Day8：使用操作增强互动
+              </h3>
+            </a>
+          </div>
+          
+      </div>
+
+      
+
+      <div class="site-footer">
+  <div class="slogan">及时当勉励，岁月不待人。</div>
+  <div class="social-container">
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+  </div>
+  Powered by <a href="https://www.iosdevlog.com" target="_blank">iosdevlog.com</a> | <a class="rss" href="https://kernel2022.github.io/atom.xml" target="_blank">RSS</a>
+</div>
+
+
+    </div>
+    <script type="application/javascript">
+
+hljs.initHighlightingOnLoad()
+
+var app = new Vue({
+  el: '#app',
+  data: {
+    menuVisible: false,
+  },
+})
+
+</script>
+
+
+
+
+  </body>
+</html>
