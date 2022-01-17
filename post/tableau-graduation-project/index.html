@@ -1,0 +1,227 @@
+
+<!DOCTYPE html>
+<html>
+  <head>
+    
+<meta charset="utf-8" >
+
+<title>Tableau 毕业设计 | 贾献华 2022</title>
+<meta name="description" content="及时当勉励，岁月不待人。">
+
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css">
+
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+<link rel="shortcut icon" href="https://kernel2022.github.io/favicon.ico?v=1642391468807">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
+<link rel="stylesheet" href="https://kernel2022.github.io/styles/main.css">
+
+
+
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<script src="https://cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
+
+
+
+  </head>
+  <body>
+    <div id="app" class="main">
+      <div class="site-header-container">
+  <div class="site-header">
+    <div class="left">
+      <a href="https://kernel2022.github.io">
+        <img class="avatar" src="https://kernel2022.github.io/images/avatar.png?v=1642391468807" alt="" width="32px" height="32px">
+      </a>
+      <a href="https://kernel2022.github.io">
+        <h1 class="site-title">贾献华 2022</h1>
+      </a>
+    </div>
+    <div class="right">
+      <transition name="fade">
+        <i class="icon" :class="{ 'icon-close-outline': menuVisible, 'icon-menu-outline': !menuVisible }" @click="menuVisible = !menuVisible"></i>
+      </transition>
+    </div>
+  </div>
+</div>
+
+<transition name="fade">
+  <div class="menu-container" style="display: none;" v-show="menuVisible">
+    <div class="menu-list">
+      
+        
+          <a href="/" class="menu purple-link">
+            首页
+          </a>
+        
+      
+        
+          <a href="/archives" class="menu purple-link">
+            归档
+          </a>
+        
+      
+        
+          <a href="/tags" class="menu purple-link">
+            标签
+          </a>
+        
+      
+        
+          <a href="/post/about" class="menu purple-link">
+            关于
+          </a>
+        
+      
+    </div>
+  </div>
+</transition>
+
+
+      <div class="content-container">
+        <div class="post-detail">
+          
+            <div class="feature-container" style="background-image: url('https://kernel2022.github.io/post-images/tableau-graduation-project.png')">
+            </div>
+          
+          <h2 class="post-title">Tableau 毕业设计</h2>
+          <div class="post-info post-detail-info">
+            <span><i class="icon-calendar-outline"></i> 2022-01-17</span>
+            
+              <span>
+                <i class="icon-pricetags-outline"></i>
+                
+                  <a href="https://kernel2022.github.io/tag/pjl7G_sDW/">
+                    Tableau 技能 14 天打卡训练营
+                    
+                      ，
+                    
+                  </a>
+                
+                  <a href="https://kernel2022.github.io/tag/U7EQ8NsLe/">
+                    tableau
+                    
+                  </a>
+                
+              </span>
+            
+          </div>
+          <div class="post-content">
+            <p>形式：Tableau看板截图+工作薄（twbx格式）文件+故事说明<br>
+文件命名：姓名+报名电话+故事主题</p>
+<!-- more -->
+<p>毕设提交通道：<a href="https://www.wenjuan.com/s/YR7FNn/#">https://www.wenjuan.com/s/YR7FNn/#</a><br>
+提交截止时间：1月17日(周一)12:00 前</p>
+<p>▶ 毕业设计数据<br>
+<a href="https://pan.baidu.com/s/1j5kwkIPE4k2ZH02BR4kRjA">https://pan.baidu.com/s/1j5kwkIPE4k2ZH02BR4kRjA</a><br>
+提取码：hun0</p>
+<h2 id="需求分析">需求分析</h2>
+<ol>
+<li>下载数据</li>
+<li>打开数据源：<strong>#D2201 毕设数据_IMDb 1915-2016 全球电影资料数据.xlsx</strong></li>
+</ol>
+<blockquote>
+<p>这是一份从IMDb网站上提取的1915-2016年间，65个国家共4937部电影的信息。共包括27个维度<br>
+该数据中的空值可以当作缺失值。某些维度的零值也可当作缺失值，会在各个维度的说明中标注<br>
+脸书粉丝（L-P）：该数据中包含导演/电影/1-3号演员脸书粉丝信息，对于以上所有维度，可以将零值当作缺失值<br>
+票房（T）：该电影在美国的票房，货币类型为USD<br>
+预算（U）：所有US地区的电影，预算的货币类型为USD。对于非US地区的电影，货币类型以IMDb页面信息为主。对于同一地区，电影的预算货币类型不一定相同。<br>
+海报中人物数量（V）：零值代表海报中无可识别的人物/演员</p>
+</blockquote>
+<h2 id="界面设计">界面设计</h2>
+<p>用户故事：</p>
+<ol>
+<li>全球电影分布
+<ol>
+<li>Imd评分地理分布</li>
+<li>电影数量分布</li>
+<li>电影评论人数分布</li>
+<li>电影评论数</li>
+</ol>
+</li>
+<li>导演 or 演员
+<ol>
+<li>指标展示</li>
+<li>导演和演员粉丝对比</li>
+</ol>
+</li>
+<li>探索发现
+<ol>
+<li>预算和票房</li>
+<li>智能显示</li>
+<li>凹凸图</li>
+<li>树形图</li>
+</ol>
+</li>
+</ol>
+<h2 id="故事说明">故事说明</h2>
+<p>这算是学习 Tableau 14 天的成果展示，主要是将这几天学习的内容使用上。<br>
+前几天的课程，我都做了笔记，发布在我的个人博客上面：<a href="https://2022.iosdevlog.com/">https://2022.iosdevlog.com/</a>。<br>
+有一些小伙伴愿意看，也有一些小伙伴认为不妥，我先放上，如果审核不同意，我会下架处理。<br>
+周六也在加班，周日陪小朋友，一起到周日夜里，早起整理了一下思路。<br>
+本来想类似 Python 脚本可以对电影票房进行预测，不过这超出了我们培训课程的使用范围。<br>
+我就只使用我们这几天学习的知识做设计吧。<br>
+首先，我准备展示地图相关的，先把 <strong>国家</strong> 转换成地理位置。<br>
+接着，我想动态交互，选择了点击选择不同的<strong>演员</strong>，展示不同的粉丝数据，再和 <strong>导演</strong> 的粉丝比较。<br>
+最后，就是展示一些其它的图形了。</p>
+<h2 id="数据分析">数据分析</h2>
+<p>图表的作用就是给你进行数据分析的。<br>
+从 <strong>地图</strong> 上可以看到，美国的评论，电影数量都是遥遥领先。中国也在慢慢追赶。<br>
+从 <strong>粉丝</strong> 上看到，<strong>演员1</strong> ，<strong>演员2</strong> 都是领先 <strong>导演</strong> ，**导演3 ** 和导演差不多。<br>
+<img src="https://kernel2022.github.io/post-images/1642391387058.png" alt="" loading="lazy"><br>
+<img src="https://kernel2022.github.io/post-images/1642391392774.png" alt="" loading="lazy"><br>
+<img src="https://kernel2022.github.io/post-images/1642391399930.png" alt="" loading="lazy"></p>
+
+          </div>
+        </div>
+
+        
+          <div class="next-post">
+            <a class="purple-link" href="https://kernel2022.github.io/post/tableau-day-9/">
+              <h3 class="post-title">
+                下一篇：Tableau Day9：美化仪表板和构建故事
+              </h3>
+            </a>
+          </div>
+          
+      </div>
+
+      
+
+      <div class="site-footer">
+  <div class="slogan">及时当勉励，岁月不待人。</div>
+  <div class="social-container">
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+  </div>
+  Powered by <a href="https://www.iosdevlog.com" target="_blank">iosdevlog.com</a> | <a class="rss" href="https://kernel2022.github.io/atom.xml" target="_blank">RSS</a>
+</div>
+
+
+    </div>
+    <script type="application/javascript">
+
+hljs.initHighlightingOnLoad()
+
+var app = new Vue({
+  el: '#app',
+  data: {
+    menuVisible: false,
+  },
+})
+
+</script>
+
+
+
+
+  </body>
+</html>
