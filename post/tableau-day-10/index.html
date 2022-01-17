@@ -1,0 +1,283 @@
+
+<!DOCTYPE html>
+<html>
+  <head>
+    
+<meta charset="utf-8" >
+
+<title>Tableau Day10：Tableau Prep 数据清理 | 贾献华 2022</title>
+<meta name="description" content="及时当勉励，岁月不待人。">
+
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css">
+
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+<link rel="shortcut icon" href="https://kernel2022.github.io/favicon.ico?v=1642433463332">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
+<link rel="stylesheet" href="https://kernel2022.github.io/styles/main.css">
+
+
+
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<script src="https://cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
+
+
+
+  </head>
+  <body>
+    <div id="app" class="main">
+      <div class="site-header-container">
+  <div class="site-header">
+    <div class="left">
+      <a href="https://kernel2022.github.io">
+        <img class="avatar" src="https://kernel2022.github.io/images/avatar.png?v=1642433463332" alt="" width="32px" height="32px">
+      </a>
+      <a href="https://kernel2022.github.io">
+        <h1 class="site-title">贾献华 2022</h1>
+      </a>
+    </div>
+    <div class="right">
+      <transition name="fade">
+        <i class="icon" :class="{ 'icon-close-outline': menuVisible, 'icon-menu-outline': !menuVisible }" @click="menuVisible = !menuVisible"></i>
+      </transition>
+    </div>
+  </div>
+</div>
+
+<transition name="fade">
+  <div class="menu-container" style="display: none;" v-show="menuVisible">
+    <div class="menu-list">
+      
+        
+          <a href="/" class="menu purple-link">
+            首页
+          </a>
+        
+      
+        
+          <a href="/archives" class="menu purple-link">
+            归档
+          </a>
+        
+      
+        
+          <a href="/tags" class="menu purple-link">
+            标签
+          </a>
+        
+      
+        
+          <a href="/post/about" class="menu purple-link">
+            关于
+          </a>
+        
+      
+    </div>
+  </div>
+</transition>
+
+
+      <div class="content-container">
+        <div class="post-detail">
+          
+            <div class="feature-container" style="background-image: url('https://kernel2022.github.io/post-images/tableau-day-10.png')">
+            </div>
+          
+          <h2 class="post-title">Tableau Day10：Tableau Prep 数据清理</h2>
+          <div class="post-info post-detail-info">
+            <span><i class="icon-calendar-outline"></i> 2022-01-17</span>
+            
+              <span>
+                <i class="icon-pricetags-outline"></i>
+                
+                  <a href="https://kernel2022.github.io/tag/pjl7G_sDW/">
+                    Tableau 技能 14 天打卡训练营
+                    
+                      ，
+                    
+                  </a>
+                
+                  <a href="https://kernel2022.github.io/tag/U7EQ8NsLe/">
+                    tableau
+                    
+                  </a>
+                
+              </span>
+            
+          </div>
+          <div class="post-content">
+            <p>▶ Day10 课程内容<br>
+学会使用 Tableau Prep 数据准备工具，清洗和输出数据源并用于分析。</p>
+<!-- more -->
+<h2 id="界面与数据连接">界面与数据连接</h2>
+<p>下载：<a href="https://www.tableau.com/zh-cn/products/prep/download">https://www.tableau.com/zh-cn/products/prep/download</a></p>
+<ol>
+<li>连接到数据</li>
+<li>到文件</li>
+<li>Microsoft Excel</li>
+<li><strong>示例 - 超市.xls</strong></li>
+<li>拖拽最上面的 <strong>订单</strong><br>
+<img src="https://kernel2022.github.io/post-images/1642428087622.png" alt="数据连接" loading="lazy"></li>
+</ol>
+<h2 id="清理数据">清理数据</h2>
+<ol>
+<li>订单</li>
+<li>清理步骤<br>
+<img src="https://kernel2022.github.io/post-images/1642428434921.png" alt="" loading="lazy"></li>
+</ol>
+<h3 id="拆分">拆分</h3>
+<ol>
+<li>客户ID</li>
+<li>拆分值</li>
+<li>自动拆分<br>
+<img src="https://kernel2022.github.io/post-images/1642428615986.png" alt="拆分" loading="lazy"></li>
+</ol>
+<h3 id="拆分-数值-字符串">拆分 数值 -&gt; 字符串</h3>
+<ol>
+<li>客户 ID - 拆分 2</li>
+<li>字符串<br>
+<img src="https://kernel2022.github.io/post-images/1642428811924.png" alt="数值 -&gt; 字符串" loading="lazy"></li>
+</ol>
+<h3 id="更改数">更改数</h3>
+<ol>
+<li>更改数</li>
+<li>可撤销<br>
+<img src="https://kernel2022.github.io/post-images/1642428861467.png" alt="更改数" loading="lazy"></li>
+</ol>
+<h3 id="排除">排除</h3>
+<ol>
+<li>类别</li>
+<li>办公用品</li>
+<li>排除<br>
+<img src="https://kernel2022.github.io/post-images/1642429083287.png" alt="排除" loading="lazy"></li>
+</ol>
+<h2 id="表连接和并集">表连接和并集</h2>
+<h3 id="表连接">表连接</h3>
+<ol>
+<li>拖拽 <strong>销售人员(命名范围)</strong> 到 <strong>清理1</strong></li>
+<li>表连接<br>
+<img src="https://kernel2022.github.io/post-images/1642430315713.png" alt="表连接" loading="lazy"></li>
+</ol>
+<h3 id="并集">并集</h3>
+<ol>
+<li>拖拽左侧最上面的 <strong>订单</strong>  到中间 <strong>订单</strong>  下方</li>
+<li>复制 <strong>示例 - 超市.xls</strong> 为 <strong>示例 - 超市1.xls</strong></li>
+<li>将 <strong>示例 - 超市1.xls</strong> 中 <strong>数量</strong> 改为  <strong>数量1</strong></li>
+<li>连接 <strong>示例 - 超市1.xls</strong></li>
+<li>将 <strong>示例 - 超市1.xls</strong> 中 <strong>订单</strong> 拖到  <strong>订单2</strong> 上</li>
+<li>选择：<strong>并集</strong></li>
+<li>颜色区分，左下方提示：
+<ol>
+<li>不匹配字段
+<ol>
+<li>数量1</li>
+<li>数量<br>
+<img src="https://kernel2022.github.io/post-images/1642431702972.png" alt="不匹配字段" loading="lazy"><br>
+选中：仅显示不匹配字段<br>
+<img src="https://kernel2022.github.io/post-images/1642431856039.png" alt="仅显示不匹配字段" loading="lazy"><br>
+拖动以合并字段<br>
+<img src="https://kernel2022.github.io/post-images/1642431944105.png" alt="合并字段" loading="lazy"></li>
+</ol>
+</li>
+</ol>
+</li>
+</ol>
+<h2 id="导出数据">导出数据</h2>
+<ol>
+<li>右击 <strong>联接1</strong></li>
+<li>在 Tableau Desktop 中预览<br>
+<img src="https://kernel2022.github.io/post-images/1642432047823.png" alt="" loading="lazy"></li>
+<li><strong>联接1</strong> 右侧 + 号</li>
+<li>输出</li>
+<li>将输出保存到
+<ol>
+<li>文件</li>
+</ol>
+</li>
+<li>名称
+<ol>
+<li>输出的文件名</li>
+</ol>
+</li>
+<li>位置
+<ol>
+<li>电脑上面的位置</li>
+</ol>
+</li>
+<li>浏览
+<ol>
+<li>选择位置</li>
+<li>保存</li>
+</ol>
+</li>
+<li>输出
+<ol>
+<li>播放<br>
+<img src="https://kernel2022.github.io/post-images/1642432345578.png" alt="导出数据" loading="lazy"></li>
+</ol>
+</li>
+</ol>
+<h2 id="发布清理流程">发布清理流程</h2>
+<ol>
+<li>菜单栏</li>
+<li>服务器</li>
+<li>发布流程<br>
+<img src="https://kernel2022.github.io/post-images/1642432485062.png" alt="发布流程" loading="lazy"></li>
+</ol>
+<h2 id="随堂测验">随堂测验</h2>
+<figure data-type="image" tabindex="1"><img src="https://kernel2022.github.io/post-images/1642433192414.png" alt="随堂测验" loading="lazy"></figure>
+
+          </div>
+        </div>
+
+        
+          <div class="next-post">
+            <a class="purple-link" href="https://kernel2022.github.io/post/tableau-graduation-project/">
+              <h3 class="post-title">
+                下一篇：Tableau 毕业设计
+              </h3>
+            </a>
+          </div>
+          
+      </div>
+
+      
+
+      <div class="site-footer">
+  <div class="slogan">及时当勉励，岁月不待人。</div>
+  <div class="social-container">
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+  </div>
+  Powered by <a href="https://www.iosdevlog.com" target="_blank">iosdevlog.com</a> | <a class="rss" href="https://kernel2022.github.io/atom.xml" target="_blank">RSS</a>
+</div>
+
+
+    </div>
+    <script type="application/javascript">
+
+hljs.initHighlightingOnLoad()
+
+var app = new Vue({
+  el: '#app',
+  data: {
+    menuVisible: false,
+  },
+})
+
+</script>
+
+
+
+
+  </body>
+</html>

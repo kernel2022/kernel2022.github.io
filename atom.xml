@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://kernel2022.github.io</id>
     <title>贾献华 2022</title>
-    <updated>2022-01-17T03:51:12.729Z</updated>
+    <updated>2022-01-17T15:31:09.704Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://kernel2022.github.io"/>
     <link rel="self" href="https://kernel2022.github.io/atom.xml"/>
@@ -10,6 +10,137 @@
     <logo>https://kernel2022.github.io/images/avatar.png</logo>
     <icon>https://kernel2022.github.io/favicon.ico</icon>
     <rights>All rights reserved 2022, 贾献华 2022</rights>
+    <entry>
+        <title type="html"><![CDATA[Tableau Day10：Tableau Prep 数据清理]]></title>
+        <id>https://kernel2022.github.io/post/tableau-day-10/</id>
+        <link href="https://kernel2022.github.io/post/tableau-day-10/">
+        </link>
+        <updated>2022-01-17T13:41:18.000Z</updated>
+        <summary type="html"><![CDATA[<p>▶ Day10 课程内容<br>
+学会使用 Tableau Prep 数据准备工具，清洗和输出数据源并用于分析。</p>
+]]></summary>
+        <content type="html"><![CDATA[<p>▶ Day10 课程内容<br>
+学会使用 Tableau Prep 数据准备工具，清洗和输出数据源并用于分析。</p>
+<!-- more -->
+<h2 id="界面与数据连接">界面与数据连接</h2>
+<p>下载：<a href="https://www.tableau.com/zh-cn/products/prep/download">https://www.tableau.com/zh-cn/products/prep/download</a></p>
+<ol>
+<li>连接到数据</li>
+<li>到文件</li>
+<li>Microsoft Excel</li>
+<li><strong>示例 - 超市.xls</strong></li>
+<li>拖拽最上面的 <strong>订单</strong><br>
+<img src="https://kernel2022.github.io/post-images/1642428087622.png" alt="数据连接" loading="lazy"></li>
+</ol>
+<h2 id="清理数据">清理数据</h2>
+<ol>
+<li>订单</li>
+<li>清理步骤<br>
+<img src="https://kernel2022.github.io/post-images/1642428434921.png" alt="" loading="lazy"></li>
+</ol>
+<h3 id="拆分">拆分</h3>
+<ol>
+<li>客户ID</li>
+<li>拆分值</li>
+<li>自动拆分<br>
+<img src="https://kernel2022.github.io/post-images/1642428615986.png" alt="拆分" loading="lazy"></li>
+</ol>
+<h3 id="拆分-数值-字符串">拆分 数值 -&gt; 字符串</h3>
+<ol>
+<li>客户 ID - 拆分 2</li>
+<li>字符串<br>
+<img src="https://kernel2022.github.io/post-images/1642428811924.png" alt="数值 -&gt; 字符串" loading="lazy"></li>
+</ol>
+<h3 id="更改数">更改数</h3>
+<ol>
+<li>更改数</li>
+<li>可撤销<br>
+<img src="https://kernel2022.github.io/post-images/1642428861467.png" alt="更改数" loading="lazy"></li>
+</ol>
+<h3 id="排除">排除</h3>
+<ol>
+<li>类别</li>
+<li>办公用品</li>
+<li>排除<br>
+<img src="https://kernel2022.github.io/post-images/1642429083287.png" alt="排除" loading="lazy"></li>
+</ol>
+<h2 id="表连接和并集">表连接和并集</h2>
+<h3 id="表连接">表连接</h3>
+<ol>
+<li>拖拽 <strong>销售人员(命名范围)</strong> 到 <strong>清理1</strong></li>
+<li>表连接<br>
+<img src="https://kernel2022.github.io/post-images/1642430315713.png" alt="表连接" loading="lazy"></li>
+</ol>
+<h3 id="并集">并集</h3>
+<ol>
+<li>拖拽左侧最上面的 <strong>订单</strong>  到中间 <strong>订单</strong>  下方</li>
+<li>复制 <strong>示例 - 超市.xls</strong> 为 <strong>示例 - 超市1.xls</strong></li>
+<li>将 <strong>示例 - 超市1.xls</strong> 中 <strong>数量</strong> 改为  <strong>数量1</strong></li>
+<li>连接 <strong>示例 - 超市1.xls</strong></li>
+<li>将 <strong>示例 - 超市1.xls</strong> 中 <strong>订单</strong> 拖到  <strong>订单2</strong> 上</li>
+<li>选择：<strong>并集</strong></li>
+<li>颜色区分，左下方提示：
+<ol>
+<li>不匹配字段
+<ol>
+<li>数量1</li>
+<li>数量<br>
+<img src="https://kernel2022.github.io/post-images/1642431702972.png" alt="不匹配字段" loading="lazy"><br>
+选中：仅显示不匹配字段<br>
+<img src="https://kernel2022.github.io/post-images/1642431856039.png" alt="仅显示不匹配字段" loading="lazy"><br>
+拖动以合并字段<br>
+<img src="https://kernel2022.github.io/post-images/1642431944105.png" alt="合并字段" loading="lazy"></li>
+</ol>
+</li>
+</ol>
+</li>
+</ol>
+<h2 id="导出数据">导出数据</h2>
+<ol>
+<li>右击 <strong>联接1</strong></li>
+<li>在 Tableau Desktop 中预览<br>
+<img src="https://kernel2022.github.io/post-images/1642432047823.png" alt="" loading="lazy"></li>
+<li><strong>联接1</strong> 右侧 + 号</li>
+<li>输出</li>
+<li>将输出保存到
+<ol>
+<li>文件</li>
+</ol>
+</li>
+<li>名称
+<ol>
+<li>输出的文件名</li>
+</ol>
+</li>
+<li>位置
+<ol>
+<li>电脑上面的位置</li>
+</ol>
+</li>
+<li>浏览
+<ol>
+<li>选择位置</li>
+<li>保存</li>
+</ol>
+</li>
+<li>输出
+<ol>
+<li>播放<br>
+<img src="https://kernel2022.github.io/post-images/1642432345578.png" alt="导出数据" loading="lazy"></li>
+</ol>
+</li>
+</ol>
+<h2 id="发布清理流程">发布清理流程</h2>
+<ol>
+<li>菜单栏</li>
+<li>服务器</li>
+<li>发布流程<br>
+<img src="https://kernel2022.github.io/post-images/1642432485062.png" alt="发布流程" loading="lazy"></li>
+</ol>
+<h2 id="随堂测验">随堂测验</h2>
+<figure data-type="image" tabindex="1"><img src="https://kernel2022.github.io/post-images/1642433192414.png" alt="随堂测验" loading="lazy"></figure>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[Tableau 毕业设计]]></title>
         <id>https://kernel2022.github.io/post/tableau-graduation-project/</id>
@@ -485,7 +616,7 @@ BACK 转到 <strong>基础仪表板1-布局与筛选</strong><br>
 <li>源工作表：<strong>总览</strong></li>
 <li>参数：<strong>选择度量</strong></li>
 <li>源字段：<strong>度量名称</strong><br>
-<img src="https://kernel2022.github.io/post-images/1642095547087.png" alt="" loading="lazy"><br>
+<img src="https://kernel2022.github.io/post-images/1642433387492.png" alt="" loading="lazy"><br>
 选择上方 <strong>总览</strong>，下方<strong>动态度量</strong> 跟着变化。<br>
 <img src="https://kernel2022.github.io/post-images/1642095672877.png" alt="更换参数" loading="lazy"></li>
 </ol>
@@ -1695,222 +1826,6 @@ END
 </ol>
 <h2 id="随堂测验">随堂测验</h2>
 <figure data-type="image" tabindex="2"><img src="https://kernel2022.github.io/post-images/1641487400799.png" alt="随堂测验" loading="lazy"></figure>
-]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Tableau Day2: 可视化入门图形制作]]></title>
-        <id>https://kernel2022.github.io/post/tableau-day-2/</id>
-        <link href="https://kernel2022.github.io/post/tableau-day-2/">
-        </link>
-        <updated>2022-01-05T12:40:12.000Z</updated>
-        <summary type="html"><![CDATA[<p>▶ Day2 课程内容<br>
-在 Tableau 中绘制折线图、柱形图、甘特图、饼图、圆环图与树状图的思路与实践方法。</p>
-]]></summary>
-        <content type="html"><![CDATA[<p>▶ Day2 课程内容<br>
-在 Tableau 中绘制折线图、柱形图、甘特图、饼图、圆环图与树状图的思路与实践方法。</p>
-<!-- more -->
-<p>▶ Day2 练习数据（复制链接至浏览器获取）<br>
-链接：https://pan.baidu.com/s/1htJDkApcDoiZbAQmQ38Jhw<br>
-提取码：8i27</p>
-<h2 id="目录">目录</h2>
-<figure data-type="image" tabindex="1"><img src="https://kernel2022.github.io/post-images/1641386457998.png" alt="目录" loading="lazy"></figure>
-<h2 id="折线图">折线图</h2>
-<figure data-type="image" tabindex="2"><img src="https://kernel2022.github.io/post-images/1641394222099.png" alt="原理" loading="lazy"></figure>
-<ol>
-<li>到文件
-<ul>
-<li>Microsoft Excel</li>
-</ul>
-</li>
-<li>示例-超市.xls</li>
-<li><strong>工作表</strong></li>
-<li>拖拽 <strong>订单</strong>，查看数据源</li>
-<li>双击左下角 <strong>工作表1</strong>
-<ul>
-<li>重命名为 <strong>折线图</strong></li>
-</ul>
-</li>
-<li>拖拽 <strong>销售额</strong> 到 <em>行</em></li>
-<li>拖拽 <strong>订单日期</strong> 到 <em>列</em></li>
-<li>工具栏：标准 -&gt; 整个视图<br>
-<img src="https://kernel2022.github.io/post-images/1641387852784.png" alt="折线图" loading="lazy"></li>
-</ol>
-<h2 id="柱形图">柱形图</h2>
-<figure data-type="image" tabindex="3"><img src="https://kernel2022.github.io/post-images/1641387988206.png" alt="原理" loading="lazy"></figure>
-<ol>
-<li>点击左下角 <strong>新建工作表</strong>
-<ul>
-<li>重命名为 <strong>柱形图</strong></li>
-</ul>
-</li>
-<li>拖拽 <strong>销售额</strong> 到 <em>行</em></li>
-<li>拖拽 <strong>子类别</strong> 到 <em>列</em><br>
-<img src="https://kernel2022.github.io/post-images/1641388083847.png" alt="柱形图" loading="lazy"></li>
-</ol>
-<h2 id="甘特图">甘特图</h2>
-<figure data-type="image" tabindex="4"><img src="https://kernel2022.github.io/post-images/1641388287414.png" alt="原理" loading="lazy"></figure>
-<ol>
-<li>点击左下角 <strong>新建工作表</strong>
-<ul>
-<li>重命名为 <strong>甘特图</strong></li>
-</ul>
-</li>
-<li>左侧下拉：<strong>创建计算字段</strong>
-<ul>
-<li>重命名为 <strong>间隔天数</strong></li>
-</ul>
-</li>
-<li>下拉选择：<strong>日期</strong></li>
-<li>双击：<strong>DATEDIFF</strong>
-<ul>
-<li>第一个参数 <strong>日期部分</strong>：'day'</li>
-<li>第二个参数 <strong>开始日期</strong>：拖拽 <strong>订单日期</strong> 到 <em>开始日期</em></li>
-<li>第三个参数 <strong>结束日期</strong>：拖拽 <strong>发货日期</strong> 到 <em>结束日期</em></li>
-<li><code>DATEDIFF('day', [订单日期], [发货日期])</code></li>
-<li>点击 <strong>应用</strong></li>
-<li>点击 <strong>确定</strong><br>
-<img src="https://kernel2022.github.io/post-images/1641389327067.png" alt="创建计算字段" loading="lazy"></li>
-</ul>
-</li>
-<li>拖拽 <strong>订单ID</strong> 到 <em>行</em></li>
-<li>拖拽 <strong>订单ID</strong> 到 <em>筛选器</em></li>
-<li>选择：<em>从列表中选择</em></li>
-<li>点击：<em>无</em></li>
-<li>选中前 10 个</li>
-<li>点击 <strong>应用</strong></li>
-<li>点击 <strong>确定</strong><br>
-<img src="https://kernel2022.github.io/post-images/1641389593959.png" alt="筛选器" loading="lazy"></li>
-<li>拖拽 <strong>订单日期</strong> 到 <em>列</em></li>
-<li>右击：<strong>订单日期</strong>
-<ul>
-<li>选中：<strong>精确日期</strong></li>
-</ul>
-</li>
-<li>拖拽 <strong>间隔天数</strong> 到 <em>大小</em></li>
-<li>右击 <strong>间隔天数</strong>
-<ul>
-<li>选中：<strong>度量（平均值）</strong></li>
-</ul>
-</li>
-<li>拖拽 <strong>发货日期</strong> 到 <em>详细信息</em></li>
-<li>右击：<strong>发货日期</strong>
-<ul>
-<li>选中：<strong>精确日期</strong><br>
-<img src="https://kernel2022.github.io/post-images/1641390048613.png" alt="甘特图" loading="lazy"></li>
-</ul>
-</li>
-</ol>
-<h2 id="饼图">饼图</h2>
-<figure data-type="image" tabindex="5"><img src="https://kernel2022.github.io/post-images/1641390288298.png" alt="原理" loading="lazy"></figure>
-<ol>
-<li>点击左下角 <strong>新建工作表</strong>
-<ul>
-<li>重命名为 <strong>饼图</strong></li>
-</ul>
-</li>
-<li>下拉：<strong>标记</strong>
-<ul>
-<li>选中：<strong>饼图</strong></li>
-</ul>
-</li>
-<li>拖拽 <strong>类别</strong> 到 <em>颜色</em></li>
-<li>工具栏：标准 -&gt; 整个视图</li>
-<li>拖拽 <strong>数量</strong> 到 <em>角度</em></li>
-<li>拖拽 <strong>类别</strong> 到 <em>标签</em></li>
-<li>拖拽 <strong>数量</strong> 到 <em>标签</em></li>
-<li>右击：<strong>总和（数量）</strong>
-<ul>
-<li>选中：<strong>快速表计算</strong>
-<ul>
-<li>选中：<strong>合并百分比</strong><br>
-<img src="https://kernel2022.github.io/post-images/1641390797861.png" alt="饼图" loading="lazy"></li>
-</ul>
-</li>
-</ul>
-</li>
-</ol>
-<h2 id="圆环图">圆环图</h2>
-<figure data-type="image" tabindex="6"><img src="https://kernel2022.github.io/post-images/1641390912774.png" alt="原理" loading="lazy"></figure>
-<ol>
-<li>点击左下角 <strong>新建工作表</strong>
-<ul>
-<li>重命名为 <strong>圆环图</strong></li>
-</ul>
-</li>
-<li>下拉：<strong>标记</strong>
-<ul>
-<li>选中：<strong>饼图</strong></li>
-</ul>
-</li>
-<li>选中 <em>行</em>
-<ul>
-<li>输入 <code>0</code> 回车</li>
-<li>再输入 <code>0</code> 回车</li>
-</ul>
-</li>
-<li>工具栏：标准 -&gt; 整个视图</li>
-<li>选中上方：<strong>总和0</strong>
-<ul>
-<li>拖拽 <strong>类别</strong> 到 <em>颜色</em></li>
-<li>拖拽 <strong>数量</strong> 到 <em>角度</em></li>
-<li>选中：<strong>大小</strong>
-<ul>
-<li>放大一些</li>
-</ul>
-</li>
-</ul>
-</li>
-<li>选中下方：<strong>总和0</strong>
-<ul>
-<li>右击：Y轴
-<ul>
-<li>选中：<em>双轴</em></li>
-</ul>
-</li>
-<li>选中：<em>颜色</em>
-<ul>
-<li>选中：<em>白色</em></li>
-</ul>
-</li>
-<li>选中：<strong>大小</strong>
-<ul>
-<li>放大一些</li>
-</ul>
-</li>
-</ul>
-</li>
-<li>选中上方：<strong>总和0</strong>
-<ul>
-<li>拖拽 <strong>类别</strong> 到 <em>标签</em></li>
-<li>拖拽 <strong>数量</strong> 到 <em>标签</em></li>
-<li>右击：<strong>总和（数量）</strong>
-<ul>
-<li>选中：<strong>快速表计算</strong>
-<ul>
-<li>选中：<strong>合并百分比</strong><br>
-<img src="https://kernel2022.github.io/post-images/1641392814842.png" alt="圆环图" loading="lazy"></li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-</li>
-</ol>
-<h2 id="树形图">树形图</h2>
-<figure data-type="image" tabindex="7"><img src="https://kernel2022.github.io/post-images/1641392914647.png" alt="原理" loading="lazy"></figure>
-<ol>
-<li>点击左下角 <strong>新建工作表</strong>
-<ul>
-<li>重命名为 <strong>树形图</strong></li>
-</ul>
-</li>
-<li>下拉：<strong>标记</strong> -&gt; <em>方形</em></li>
-<li>拖拽 <strong>客户名称</strong> 到 <em>详细信息</em></li>
-<li>拖拽 <strong>销售额</strong> 到 <em>大小</em><br>
-<img src="https://kernel2022.github.io/post-images/1641394176152.png" alt="树形图" loading="lazy"></li>
-</ol>
-<h2 id="随堂测验">随堂测验</h2>
-<figure data-type="image" tabindex="8"><img src="https://kernel2022.github.io/post-images/1641394680426.png" alt="随堂测验" loading="lazy"></figure>
 ]]></content>
     </entry>
 </feed>
