@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://kernel2022.github.io</id>
     <title>贾献华 2022</title>
-    <updated>2022-01-17T15:31:09.704Z</updated>
+    <updated>2022-01-18T15:46:53.975Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://kernel2022.github.io"/>
     <link rel="self" href="https://kernel2022.github.io/atom.xml"/>
@@ -10,6 +10,216 @@
     <logo>https://kernel2022.github.io/images/avatar.png</logo>
     <icon>https://kernel2022.github.io/favicon.ico</icon>
     <rights>All rights reserved 2022, 贾献华 2022</rights>
+    <entry>
+        <title type="html"><![CDATA[ 《深入浅出计算机组成原理》笔记]]></title>
+        <id>https://kernel2022.github.io/post/computer-organization/</id>
+        <link href="https://kernel2022.github.io/post/computer-organization/">
+        </link>
+        <updated>2022-01-18T14:17:00.000Z</updated>
+        <content type="html"><![CDATA[<figure data-type="image" tabindex="1"><img src="https://kernel2022.github.io/post-images/1642515551700.jpeg" alt="" loading="lazy"></figure>
+<h2 id="入门">入门</h2>
+<p>三大件</p>
+<ol>
+<li>CPU 中央处理器（Central Processing Unit）</li>
+<li>内存（Memory）</li>
+<li>主板（Motherboard）<br>
+还有一个很特殊的设备，就是 <strong>显卡（Graphics Card）</strong></li>
+<li>GPU（Graphics Processing Unit，图形处理器）</li>
+</ol>
+<h3 id="冯诺依曼体系结构von-neumann-architecture">冯·诺依曼体系结构（Von Neumann architecture）</h3>
+<p>也叫 <strong>存储程序计算机</strong></p>
+<ul>
+<li>可编程</li>
+<li>存储<br>
+计算机组成</li>
+</ul>
+<ol>
+<li>运算器：处理器单元（Processing Unit）
+<ol>
+<li>算术逻辑单元（Arithmetic Logic Unit，ALU）</li>
+<li>处理器寄存器（Processor Register）</li>
+</ol>
+</li>
+<li>控制器：控制器单元（Control Unit/CU）
+<ol>
+<li>程序计数器（Program Counter）</li>
+<li>指令寄存器（Instruction Register）</li>
+</ol>
+</li>
+<li>存储器（Memory Register）
+<ol>
+<li>内存
+<ol>
+<li>数据（Data）</li>
+<li>指令（Instruction）</li>
+</ol>
+</li>
+<li>硬盘</li>
+</ol>
+</li>
+<li>输入设备（Input Device）</li>
+<li>和输出设备（Output Device）<br>
+<img src="https://kernel2022.github.io/post-images/1642516358859.jpeg" alt="计算机组成" loading="lazy"></li>
+</ol>
+<h3 id="计算机组成原理知识地图">计算机组成原理知识地图</h3>
+<p><img src="https://kernel2022.github.io/post-images/computer-organization.jpg" alt="计算机组成原理知识地图" loading="lazy"><br>
+两个核心指标</p>
+<ol>
+<li>性能 = <strong>1/ 响应时间</strong></li>
+<li>功耗<br>
+<em>性能</em>
+<ol>
+<li>跑得更快：响应时间（Response time）/执行时间（Execution time）</li>
+<li>搬得更多：吞吐率（Throughput）/带宽（Bandwidth）<br>
+计算机的计时单位：<strong>CPU 时钟</strong></li>
+</ol>
+</li>
+</ol>
+<pre><code class="language-sh">$ time seq 1000000 | wc -l
+ 1000000
+seq 1000000  0.26s user 0.00s system 96% cpu 0.269 total
+wc -l  0.01s user 0.01s system 4% cpu 0.268 total
+</code></pre>
+<p><code>程序的 CPU 执行时间 = CPU 时钟周期数 × 时钟周期时间</code><br>
+晶振: 晶体振荡器（Oscillator Crystal）<br>
+我们把 <strong>晶振</strong> 当成 CPU 内部的电子表来使用。晶振带来的每一次“滴答”，就是时钟周期时间。<br>
+<em>功耗</em><br>
+<code>功耗 ~= 1/2 × 负载电容 × 电压的平方 × 开关频率 × 晶体管数量</code><br>
+<img src="https://kernel2022.github.io/post-images/1642518291466.webp" alt="功耗" loading="lazy"><br>
+性能提升方法</p>
+<ol>
+<li>加速大概率事件: GPU</li>
+<li>通过流水线提高性能</li>
+<li>通过预测提高性能</li>
+</ol>
+<h2 id="指令和计算">指令和计算</h2>
+<h3 id="纸带编程">纸带编程</h3>
+<p><img src="https://kernel2022.github.io/post-images/1642518502384.webp" alt="上世纪60年代晚期或70年代初期，Arnold Reinold拍摄的FORTRAN计算程序的穿孔卡照片" loading="lazy"><br>
+计算机指令集 (Instruction Set)</p>
+<ol>
+<li>存储程序型计算机（Stored-program Computer）</li>
+<li>插线板计算机（Plugboard Computer）<br>
+<img src="https://kernel2022.github.io/post-images/1642518704719.webp" alt="一台IBM的Plugboard" loading="lazy"><br>
+代码怎么变成机器码<br>
+<img src="https://kernel2022.github.io/post-images/1642518776914.webp" alt="编译" loading="lazy"><br>
+解析指令和机器码<br>
+指令类型：</li>
+<li>算术类指令
+<ol>
+<li><strong>+-*/</strong></li>
+</ol>
+</li>
+<li>数据传输类指令
+<ol>
+<li><strong>=</strong></li>
+</ol>
+</li>
+<li>逻辑类指令
+<ol>
+<li><strong>&amp; ! |</strong></li>
+</ol>
+</li>
+<li>条件分支类指令
+<ol>
+<li><strong>if else</strong></li>
+</ol>
+</li>
+<li>无条件跳转指令
+<ol>
+<li><strong>goto</strong><br>
+<img src="https://kernel2022.github.io/post-images/1642518942189.webp" alt="指令类型" loading="lazy"></li>
+</ol>
+</li>
+</ol>
+<h3 id="goto">goto</h3>
+<p>逻辑上，我们可以认为，CPU 其实就是由一堆寄存器组成的。而寄存器就是 CPU 内部，由多个触发器（Flip-Flop）或者锁存器（Latches）组成的简单电路。<br>
+<img src="https://kernel2022.github.io/post-images/1642519100021.webp" alt="" loading="lazy"><br>
+寄存器类型</p>
+<ol>
+<li>PC 寄存器（Program Counter Register）：也叫指令地址寄存器（Instruction Address Register）</li>
+<li>指令寄存器（Instruction Register）：用来存放当前正在执行的指令</li>
+<li>条件码寄存器（Status Register）：用里面的一个一个标记位（Flag），存放 CPU 进行算术或者逻辑计算的结果</li>
+<li>通用寄存器<br>
+<img src="https://kernel2022.github.io/post-images/1642519249948.webp" alt="特殊寄存器" loading="lazy"></li>
+</ol>
+<pre><code class="language-sh">gcc -g -c test.c
+objdump -d -M intel -S test.o 
+</code></pre>
+<p><img src="https://kernel2022.github.io/post-images/1642519338035.webp" alt="" loading="lazy"><br>
+<img src="https://kernel2022.github.io/post-images/1642519393638.webp" alt="" loading="lazy"><br>
+stack overflow<br>
+<img src="https://kernel2022.github.io/post-images/1642519661638.webp" alt="stack" loading="lazy"><br>
+图中，rbp 是 register base pointer 栈基址寄存器（栈帧指针），指向当前栈帧的栈底地址。rsp 是 register stack pointer 栈顶寄存器（栈指针），指向栈顶元素。</p>
+<h3 id="elf和静态链接">ELF和静态链接</h3>
+<p><img src="https://kernel2022.github.io/post-images/1642519910620.webp" alt="" loading="lazy"><br>
+ELF 文件格式<br>
+<img src="https://kernel2022.github.io/post-images/1642519948139.webp" alt="elf" loading="lazy"></p>
+<ol>
+<li>首先是**.text Section**，也叫作<em>代码段</em>或者<em>指令段（Code Section）</em>，用来保存程序的代码和指令；</li>
+<li>接着是**.data Section**，也叫作<em>数据段（Data Section）</em>，用来保存程序里面设置好的初始化数据信息；</li>
+<li>然后就是**.rel.text Secion**，叫作<em>重定位表（Relocation Table）</em>。重定位表里，保留的是当前的文件里面，哪些跳转地址其实是我们不知道的。比如上面的 link_example.o 里面，我们在 main 函数里面调用了 add 和 printf 这两个函数，但是在链接发生之前，我们并不知道该跳转到哪里，这些信息就会存储在重定位表里；</li>
+<li>最后是**.symtab Section**，叫作<em>符号表（Symbol Table）</em>。符号表保留了我们所说的当前文件里面定义的函数名称和对应地址的地址簿。<br>
+<img src="https://kernel2022.github.io/post-images/1642520060838.webp" alt="ELF" loading="lazy"></li>
+</ol>
+<h3 id="内存分页">内存分页</h3>
+<p><code>getconf PAGE_SIZE</code><br>
+<img src="https://kernel2022.github.io/post-images/1642520154855.webp" alt="内存分页" loading="lazy"></p>
+<ol>
+<li>虚拟内存
+<ol>
+<li>虚拟内存地址（Virtual Memory Address）：指令里用到的内存地址</li>
+<li>物理内存地址（Physical Memory Address）：硬件里面的空间地址</li>
+<li>虚拟内存到物理内存的映射表</li>
+</ol>
+</li>
+<li>内存交换
+<ol>
+<li>分段</li>
+<li>内存交换（Memory Swapping）</li>
+</ol>
+</li>
+<li>内存分页</li>
+</ol>
+<h3 id="动态链接">动态链接</h3>
+<p><img src="https://kernel2022.github.io/post-images/1642520801236.webp" alt="" loading="lazy"><br>
+链接</p>
+<ol>
+<li>静态链接（Static Link）</li>
+<li>动态链接（Dynamic Link）共享库（Shared Libraries）
+<ol>
+<li>Windows 下，这些共享库文件就是**.dll**文件，也就是 Dynamic-Link Libary（DLL，动态链接库）</li>
+<li>Linux 下，这些共享库文件就是**.so **文件，也就是 Shared Object（一般我们也称之为动态链接库）<br>
+<img src="https://kernel2022.github.io/post-images/1642520466632.webp" alt="" loading="lazy"></li>
+</ol>
+</li>
+</ol>
+<pre><code class="language-sh">gcc lib.c -fPIC -shared -o lib.so
+gcc -o show_me_poor show_me_poor.c ./lib.so
+objdump -d -M intel -S show_me_poor
+</code></pre>
+<p><strong>-fPIC</strong>: Position Independent Code 地址无关代码<br>
+PLT 和 GOT，动态链接的解决方案</p>
+<ul>
+<li>PLT：程序链接表（Procedure Link Table）</li>
+<li>GOT：共享库的 data section 里面，保存了一张全局偏移表（GOT，Global Offset Table）<br>
+<img src="https://kernel2022.github.io/post-images/1642520655033.webp" alt="" loading="lazy"></li>
+</ul>
+<h2 id="处理器">处理器</h2>
+<h2 id="应用">应用</h2>
+<h2 id="参考">参考</h2>
+<ol>
+<li><a href="https://time.geekbang.org/column/article/91427">极课时间《深入浅出计算机组成原理》</a></li>
+<li><a href="https://www.coursera.org/learn/jisuanji-zucheng">北京大学免费公开课《Computer Organization》</a></li>
+<li>《计算机组成与设计：硬件 / 软件接口》</li>
+<li>《深入理解计算机系统》</li>
+<li><a href="https://www.bilibili.com/video/av24540152/">CSAPP深入理解计算机系统 课程视频含英文字幕</a></li>
+<li>《计算机组成：结构化方法》</li>
+<li>《编码：隐匿在计算机软硬件背后的语言》</li>
+<li>《程序员的自我修养：链接、装载和库》</li>
+<li></li>
+</ol>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[Tableau Day10：Tableau Prep 数据清理]]></title>
         <id>https://kernel2022.github.io/post/tableau-day-10/</id>
@@ -1608,224 +1818,6 @@ RISC-V 架构秉承简单的设计哲学，完全抛弃历史包袱，从轻上�
 </ol>
 <h2 id="随堂测验">随堂测验</h2>
 <figure data-type="image" tabindex="1"><img src="https://kernel2022.github.io/post-images/1641567179316.png" alt="随堂测验" loading="lazy"></figure>
-]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Tableau Day3：智能分析]]></title>
-        <id>https://kernel2022.github.io/post/tableau-day-3/</id>
-        <link href="https://kernel2022.github.io/post/tableau-day-3/">
-        </link>
-        <updated>2022-01-06T10:53:30.000Z</updated>
-        <summary type="html"><![CDATA[<p>▶ Day3 课程内容<br>
-学习如何使用参数，实现业务问题预警与自定义选择指标。</p>
-]]></summary>
-        <content type="html"><![CDATA[<p>▶ Day3 课程内容<br>
-学习如何使用参数，实现业务问题预警与自定义选择指标。</p>
-<!-- more -->
-<p>▶ Day3 练习数据（复制链接至浏览器获取）<br>
-https://pan.baidu.com/s/1HYWpDAdJHYkJ0K_u43yK3A<br>
-提取码：wyik</p>
-<h2 id="达标判断">达标判断</h2>
-<ol>
-<li>到文件
-<ul>
-<li>Microsoft Excel</li>
-</ul>
-</li>
-<li>示例-超市.xls</li>
-<li><strong>工作表</strong></li>
-<li>拖拽 <strong>订单</strong>，查看数据源</li>
-<li>双击左下角 <strong>工作表1</strong>
-<ul>
-<li>重命名为 <strong>达标判断</strong></li>
-</ul>
-</li>
-<li>拖拽 <strong>订单日期</strong> 到 <em>列</em>
-<ol>
-<li>下钻：<strong>年-月</strong></li>
-</ol>
-</li>
-<li>拖拽 <strong>销售额</strong> 到 <em>行</em></li>
-<li>工具栏：标准 -&gt; 整个视图</li>
-<li>拖拽 <strong>订单日期</strong> 到 <em>列</em></li>
-<li>下拉：<strong>标记</strong></li>
-</ol>
-<ul>
-<li>选择：<strong>条形图</strong></li>
-</ul>
-<ol start="11">
-<li>点击左上角 <strong>分析</strong>（在<strong>数据</strong>旁边）
-<ol>
-<li>拖拽 <strong>常量线</strong>  到 右侧 <strong>表</strong></li>
-<li>输入 <em>400000</em> （四十万）</li>
-</ol>
-</li>
-<li>点击左上角 <strong>数据</strong></li>
-<li>搜索 旁边的 <strong>下拉</strong></li>
-<li>选择 <strong>创建计算字段</strong></li>
-<li>重命名：<strong>达标判断</strong><br>
-<img src="https://kernel2022.github.io/post-images/1641482153765.png" alt="达标判断" loading="lazy"></li>
-</ol>
-<pre><code class="language-bash">IF SUM([销售额]) &gt;= 400000 THEN '达标'
-ELSE '不达标'
-END
-</code></pre>
-<ol start="15">
-<li>拖拽 <strong>达标判断</strong> 到 <em>颜色</em></li>
-<li>右侧下拉：<strong>编辑颜色</strong>
-<ol>
-<li>不达标：红</li>
-<li>达标：绿<br>
-<img src="https://kernel2022.github.io/post-images/1641482709419.png" alt="编辑颜色" loading="lazy"><br>
-<img src="https://kernel2022.github.io/post-images/1641482723209.png" alt="达标判断" loading="lazy"></li>
-</ol>
-</li>
-</ol>
-<h2 id="变动目标">变动目标</h2>
-<ol>
-<li>右击 <strong>达标判断</strong> 工作表
-<ol>
-<li>点击 <strong>复制</strong> （复制为交叉表上方）</li>
-<li>重命名为 <strong>变动目标</strong></li>
-</ol>
-</li>
-<li>右击 <strong>常量线</strong>
-<ol>
-<li>点击 <strong>移除</strong></li>
-</ol>
-</li>
-<li>点击 <strong>分析</strong>
-<ol>
-<li>拖拽 <strong>平均线</strong>  到 右侧 <strong>表</strong></li>
-<li>右击：<strong>编辑</strong></li>
-<li><strong>线</strong> / <strong>值</strong> / <strong>下拉</strong>：<em>创建新参数</em>
-<ol>
-<li>名称：<strong>变动目标</strong></li>
-<li>值范围
-<ol>
-<li>最小值：300,000（三十万）</li>
-<li>最大值：500,000（五十万）</li>
-<li>表长：    5000（五千）<br>
-<img src="https://kernel2022.github.io/post-images/1641483488024.png" alt="变动目标" loading="lazy"></li>
-</ol>
-</li>
-</ol>
-</li>
-<li>标签：<strong>值</strong><br>
-<img src="https://kernel2022.github.io/post-images/1641483606826.png" alt="平均线" loading="lazy"></li>
-</ol>
-</li>
-<li>右击：左下角 <strong>参数</strong> / <strong>变动目标</strong>
-<ol>
-<li>选择：<strong>显示参数</strong></li>
-</ol>
-</li>
-<li>右击：<strong>表</strong> / <strong>达标判断</strong>
-<ol>
-<li>选择：<strong>编辑</strong></li>
-</ol>
-</li>
-</ol>
-<pre><code class="language-bash">IF SUM([销售额]) &gt;= [变动目标] THEN '达标'
-ELSE '不达标'
-END
-</code></pre>
-<figure data-type="image" tabindex="1"><img src="https://kernel2022.github.io/post-images/1641484180942.png" alt="变动目标" loading="lazy"></figure>
-<h2 id="动态度量">动态度量</h2>
-<ol>
-<li>左下角新建 <strong>工作表</strong>
-<ul>
-<li>重命名为 <strong>动态度量</strong></li>
-</ul>
-</li>
-<li>拖拽 <strong>子类别</strong> 到 <em>列</em></li>
-<li>拖拽 <strong>销售额</strong> 到 <em>行</em></li>
-<li>工具栏：标准 -&gt; 整个视图</li>
-<li>搜索 旁边的 <strong>下拉</strong></li>
-<li>选择 <strong>创建参数</strong>
-<ol>
-<li>名称：<strong>度量选择</strong></li>
-<li>字符类型：<strong>字符串</strong></li>
-<li>允许的值：<strong>列表</strong></li>
-<li>值列表：<strong>值</strong>
-<ol>
-<li>销售额</li>
-<li>利润</li>
-<li>数量<br>
-<img src="https://kernel2022.github.io/post-images/1641485063947.png" alt="创建参数" loading="lazy"></li>
-</ol>
-</li>
-</ol>
-</li>
-<li>右击：左下角 <strong>参数</strong> / <strong>度量选择</strong>
-<ol>
-<li>选择：<strong>显示参数</strong></li>
-</ol>
-</li>
-<li>搜索 旁边的 <strong>下拉</strong></li>
-<li>选择 <strong>创建计算字段</strong>
-<ol>
-<li>重命名：<strong>动态度量</strong></li>
-</ol>
-</li>
-</ol>
-<pre><code class="language-bash">IF [度量选择] == '销售额' THEN [销售额]
-ELSEIF [度量选择] == '利润' THEN [利润]
-ELSEIF [度量选择] == '数量' THEN [数量]
-END
-</code></pre>
-<ol start="9">
-<li>拖拽 <strong>动态度量</strong> 到 <em>行</em> 替换 <strong>总和（销售额）</strong><br>
-<img src="https://kernel2022.github.io/post-images/1641485744377.png" alt="动态度量" loading="lazy"></li>
-</ol>
-<h2 id="动态维度">动态维度</h2>
-<ol>
-<li>左下角新建 <strong>工作表</strong>
-<ul>
-<li>重命名为 ** 动态维度**</li>
-</ul>
-</li>
-<li>拖拽 <strong>子类别</strong> 到 <em>列</em></li>
-<li>拖拽 <strong>销售额</strong> 到 <em>行</em></li>
-<li>工具栏：标准 -&gt; 整个视图</li>
-<li>搜索 旁边的 <strong>下拉</strong></li>
-<li>选择 <strong>创建参数</strong>
-<ol>
-<li>名称：<strong>维度选择</strong></li>
-<li>字符类型：<strong>字符串</strong></li>
-<li>允许的值：<strong>列表</strong></li>
-<li>值列表：<strong>值</strong>
-<ol>
-<li>子类别</li>
-<li>区域</li>
-<li>细分<br>
-<img src="https://kernel2022.github.io/post-images/1641486024205.png" alt="维度选择" loading="lazy"></li>
-</ol>
-</li>
-</ol>
-</li>
-<li>右击：左下角 <strong>参数</strong> / <strong>维度选择</strong>
-<ol>
-<li>选择：<strong>显示参数</strong></li>
-</ol>
-</li>
-<li>选择 <strong>创建计算字段</strong>
-<ol>
-<li>重命名：<strong>动态维度</strong></li>
-</ol>
-</li>
-</ol>
-<pre><code class="language-bash">IF [维度选择] == '子类别' THEN [子类别]
-ELSEIF [维度选择] == '区域' THEN [区域]
-ELSEIF [维度选择] == '细分' THEN [细分]
-END 
-</code></pre>
-<ol start="9">
-<li>拖拽 <strong>动态度量</strong> 到 <em>列</em> 替换 <strong>子类别</strong><br>
-<img src="https://kernel2022.github.io/post-images/1641486479791.png" alt="动态维度" loading="lazy"></li>
-</ol>
-<h2 id="随堂测验">随堂测验</h2>
-<figure data-type="image" tabindex="2"><img src="https://kernel2022.github.io/post-images/1641487400799.png" alt="随堂测验" loading="lazy"></figure>
 ]]></content>
     </entry>
 </feed>
